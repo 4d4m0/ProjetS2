@@ -124,7 +124,7 @@ public class Fournisseur {
 		frame.getContentPane().add(btnModifierLeFournisseur);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\User\\Desktop\\Cour IUT\\JAVA\\Projet_S2\\grappe-de-raisin.PNG"));
+		lblNewLabel_2.setIcon(new ImageIcon("grappe-de-raisin.PNG"));
 		lblNewLabel_2.setBounds(784, 200, 113, 113);
 		frame.getContentPane().add(lblNewLabel_2);
 	}
