@@ -99,7 +99,7 @@ public class Emplacement {
 		frame.getContentPane().add(table);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Desktop\\Cour IUT\\JAVA\\Projet_S2\\cave-a-vin.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Desktop\\Cour IUT\\GitProjet_S2\\ProjetS2\\Projet_S2\\cave-a-vin.jpg"));
 		lblNewLabel.setBounds(30, 124, 331, 235);
 		frame.getContentPane().add(lblNewLabel);
 	}

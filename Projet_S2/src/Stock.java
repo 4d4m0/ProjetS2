@@ -147,6 +147,18 @@ public class Stock {
 		frame.getContentPane().add(btnVoirLaBouteille);
 
 		JButton btnAjouterUneBouteille = new JButton("Ajouter une bouteille");
+		btnAjouterUneBouteille.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				Add_Bttl modif = new Add_Bttl();
+				Add_Bttl.frame.setVisible(true);
+			}
+		});
+		btnAjouterUneBouteille.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnAjouterUneBouteille.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAjouterUneBouteille.setBounds(371, 453, 177, 23);
 		frame.getContentPane().add(btnAjouterUneBouteille);
