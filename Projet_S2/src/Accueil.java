@@ -127,6 +127,7 @@ public class Accueil {
 		btnVoirLesFournisseurs.setBounds(625, 322, 228, 31);
 		frame.getContentPane().add(btnVoirLesFournisseurs);
 
+			//Titre
 		JLabel lblGestionnaireDeCave = new JLabel("Gestionnaire de Cave");
 		lblGestionnaireDeCave.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblGestionnaireDeCave.setBounds(406, 46, 204, 31);

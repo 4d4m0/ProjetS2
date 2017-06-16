@@ -108,7 +108,7 @@ public class Commande {
 		
 		JLabel lblInformationsDeLa = new JLabel("Informations de la commande :");
 		lblInformationsDeLa.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblInformationsDeLa.setBounds(47, 202, 158, 14);
+		lblInformationsDeLa.setBounds(47, 202, 264, 14);
 		frame.getContentPane().add(lblInformationsDeLa);
 		
 		JLabel lblNewLabel = new JLabel("Num\u00E9ro de commande:");
@@ -213,5 +213,7 @@ public class Commande {
 		lblCommandes.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblCommandes.setBounds(399, 45, 123, 14);
 		frame.getContentPane().add(lblCommandes);
+		
+
 	}
 }
