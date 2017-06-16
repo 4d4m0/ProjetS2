@@ -17,6 +17,16 @@ public class Stock {
 
 	static JFrame frame;
 	private JTable table;
+	int nbBtlBlanc = 50;
+	int nbBtlRouge = 50;
+	int nbBtlRose = 50;
+	int nbBtlEffer = 100;
+	int totalBtl = nbBtlBlanc + nbBtlRouge + nbBtlRose;
+	String[] listeTypeVin ={"Rouge","Blanc","Rose"};
+	String[] listeFournisseur ={"Cuvelier Fauvarque","F1","F2"};
+	String[] listeCuvee={"2000","2001","2002","2003"};
+	String[] listeRegion={"Bordeau","Jura","Aquitaine","Bourgogne"};
+	String[] listeVolume={"75","1","1.5","3","4.5","6","9","12","15","18"};
 
 	/**
 	 * Launch the application.
@@ -177,43 +187,43 @@ public class Stock {
 		lblStocks.setBounds(425, 54, 77, 31);
 		frame.getContentPane().add(lblStocks);
 
-		JLabel lblTotal_1 = new JLabel("Total ...");
+		JLabel lblTotal_1 = new JLabel(Integer.toString(nbBtlBlanc));
 		lblTotal_1.setBounds(154, 205, 46, 14);
 		frame.getContentPane().add(lblTotal_1);
 
-		JLabel label_1 = new JLabel("Total ...");
+		JLabel label_1 = new JLabel(Integer.toString(nbBtlRouge));
 		label_1.setBounds(154, 238, 46, 14);
 		frame.getContentPane().add(label_1);
 
-		JLabel label_2 = new JLabel("Total ...");
+		JLabel label_2 = new JLabel(Integer.toString(nbBtlRose));
 		label_2.setBounds(154, 271, 46, 14);
 		frame.getContentPane().add(label_2);
 
-		JLabel label_3 = new JLabel("Total ...");
+		JLabel label_3 = new JLabel(Integer.toString(nbBtlEffer));
 		label_3.setBounds(154, 304, 46, 14);
 		frame.getContentPane().add(label_3);
 
-		JLabel label_4 = new JLabel("Total ...");
+		JLabel label_4 = new JLabel(Integer.toString(totalBtl));
 		label_4.setBounds(154, 337, 46, 14);
 		frame.getContentPane().add(label_4);
 
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox(listeTypeVin);
 		comboBox.setBounds(462, 202, 133, 20);
 		frame.getContentPane().add(comboBox);
 
-		JComboBox comboBox_1 = new JComboBox();
+		JComboBox comboBox_1 = new JComboBox(listeFournisseur);
 		comboBox_1.setBounds(462, 235, 133, 20);
 		frame.getContentPane().add(comboBox_1);
 
-		JComboBox comboBox_2 = new JComboBox();
+		JComboBox comboBox_2 = new JComboBox(listeCuvee);
 		comboBox_2.setBounds(462, 268, 133, 20);
 		frame.getContentPane().add(comboBox_2);
 
-		JComboBox comboBox_3 = new JComboBox();
+		JComboBox comboBox_3 = new JComboBox(listeRegion);
 		comboBox_3.setBounds(462, 301, 133, 20);
 		frame.getContentPane().add(comboBox_3);
 
-		JComboBox comboBox_4 = new JComboBox();
+		JComboBox comboBox_4 = new JComboBox(listeVolume);
 		comboBox_4.setBounds(462, 334, 133, 20);
 		frame.getContentPane().add(comboBox_4);
 	}
