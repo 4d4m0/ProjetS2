@@ -6,17 +6,17 @@ public class Bouteille implements TableModel {
 	String region;
 	String pays;
 	String millesime;
-	int cuvee;
+	String cuvee;
 	String robe;
-	int temperature;
+	String temperature;
 	String fournisseur;
-	int degre;
-	int volume;
+	String degre;
+	String volume;
 	String effervescent;
-	int note;
-	int quantite;
+	String note;
+	String quantite;
 	String disponible;
-	int Emplacement;
+	String Emplacement;
 	String commentaire;
 
 	@Override
@@ -28,9 +28,9 @@ public class Bouteille implements TableModel {
 				+ ", commentaire=" + commentaire + "]";
 	}
 
-	public Bouteille(String nom, String region, String pays, String millesime, int cuvee, String robe, int temperature,
-			String fournisseur, int degre, int volume, String effervescent, int note, int quantite, String disponible,
-			int emplacement, String commentaire) {
+	public Bouteille(String nom, String region, String pays, String millesime, String cuvee, String robe, String temperature,
+			String fournisseur, String degre, String volume, String effervescent, String note, String quantite, String disponible,
+			String emplacement, String commentaire) {
 		this.nom = nom;
 		this.region = region;
 		this.pays = pays;
@@ -45,7 +45,7 @@ public class Bouteille implements TableModel {
 		this.note = note;
 		this.quantite = quantite;
 		this.disponible = disponible;
-		Emplacement = emplacement;
+		this.Emplacement = emplacement;
 		this.commentaire = commentaire;
 	}
 
@@ -81,11 +81,11 @@ public class Bouteille implements TableModel {
 		this.millesime = millesime;
 	}
 
-	public int getCuvee() {
+	public String getCuvee() {
 		return cuvee;
 	}
 
-	public void setCuvee(int cuvee) {
+	public void setCuvee(String cuvee) {
 		this.cuvee = cuvee;
 	}
 
@@ -97,11 +97,11 @@ public class Bouteille implements TableModel {
 		this.robe = robe;
 	}
 
-	public int getTemperature() {
+	public String getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temperature) {
+	public void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
 
@@ -113,19 +113,19 @@ public class Bouteille implements TableModel {
 		this.fournisseur = fournisseur;
 	}
 
-	public int getDegre() {
+	public String getDegre() {
 		return degre;
 	}
 
-	public void setDegre(int degre) {
+	public void setDegre(String degre) {
 		this.degre = degre;
 	}
 
-	public int getVolume() {
+	public String getVolume() {
 		return volume;
 	}
 
-	public void setVolume(int volume) {
+	public void setVolume(String volume) {
 		this.volume = volume;
 	}
 
@@ -137,19 +137,19 @@ public class Bouteille implements TableModel {
 		this.effervescent = effervescent;
 	}
 
-	public int getNote() {
+	public String getNote() {
 		return note;
 	}
 
-	public void setNote(int note) {
+	public void setNote(String note) {
 		this.note = note;
 	}
 
-	public int getQuantite() {
+	public String getQuantite() {
 		return quantite;
 	}
 
-	public void setQuantite(int quantite) {
+	public void setQuantite(String quantite) {
 		this.quantite = quantite;
 	}
 
@@ -161,11 +161,11 @@ public class Bouteille implements TableModel {
 		this.disponible = disponible;
 	}
 
-	public int getEmplacement() {
+	public String getEmplacement() {
 		return Emplacement;
 	}
 
-	public void setEmplacement(int emplacement) {
+	public void setEmplacement(String emplacement) {
 		Emplacement = emplacement;
 	}
 

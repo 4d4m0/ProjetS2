@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -32,6 +34,9 @@ public class Add_Bttl {
 	private JTextField t_dispo;
 	private JTextField t_emplacement;
 	private JTextField t_comment;
+	private JTextField t_robe;
+	public ArrayList<Bouteille> liste_stock;
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,6 +60,17 @@ public class Add_Bttl {
 		initialize();
 	}
 
+	public Bouteille afficher_Bttl(Bouteille Bttl){
+		return Bttl;
+	}
+	public void ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime, JTextField cuvee,
+			JTextField robe,JTextField temp, JTextField fournisseur, JTextField degre, JTextField volume, JTextField effer,
+			JTextField note, JTextField qtt, JTextField dispo, JTextField emplacement, JTextField comment) {
+		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(), millesime.getText(),
+				cuvee.getText(),robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(), volume.getText(),
+				effer.getText(), note.getText(), qtt.getText(),dispo.getText(),emplacement.getText(),comment.getText());
+		System.out.println(n_Bttl);
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -211,6 +227,8 @@ public class Add_Bttl {
 		t_nom.setBounds(178, 125, 95, 20);
 		frame.getContentPane().add(t_nom);
 		t_nom.setColumns(10);
+		
+	
 
 		JButton btnValider = new JButton("Valider");
 		btnValider.setBackground(new Color(51, 102, 0));
@@ -219,9 +237,9 @@ public class Add_Bttl {
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				//nom = t_nom.getText();
-				//Bouteille Btll =new Bouteille(nom, nom, nom, nom, 0, nom, 0, nom, 0, 0, nom, 0, 0, nom, 0, nom);
-				//System.out.println(nom);
+				ajouter_Bttl(t_nom,t_region,t_pays,t_millesime,t_cuvee,t_robe,t_tempe,t_fournisseur,t_degre,t_volume,t_efferve,t_note,t_qtt,t_dispo,t_emplacement,t_comment);
+				//afficher_Bttl(n_Btll);
+				//liste_stock.add(ajouter_Bttl(t_nom,t_region,t_pays,t_millesime,t_cuvee,t_robe,t_tempe,t_fournisseur,t_degre,t_volume,t_efferve,t_note,t_qtt,t_dispo,t_emplacement,t_comment));
 			}
 		});
 		btnValider.addActionListener(new ActionListener() {
@@ -230,80 +248,90 @@ public class Add_Bttl {
 		});
 		btnValider.setBounds(178, 430, 95, 23);
 		frame.getContentPane().add(btnValider);
-		
+
 		t_region = new JTextField();
 		t_region.setColumns(10);
 		t_region.setBounds(178, 154, 95, 20);
 		frame.getContentPane().add(t_region);
-		
+
 		t_pays = new JTextField();
 		t_pays.setColumns(10);
 		t_pays.setBounds(178, 188, 95, 20);
 		frame.getContentPane().add(t_pays);
-		
+
 		t_millesime = new JTextField();
 		t_millesime.setColumns(10);
 		t_millesime.setBounds(178, 222, 95, 20);
 		frame.getContentPane().add(t_millesime);
-		
+
 		t_cuvee = new JTextField();
 		t_cuvee.setColumns(10);
 		t_cuvee.setBounds(178, 252, 95, 20);
 		frame.getContentPane().add(t_cuvee);
-		
+
 		t_tempe = new JTextField();
 		t_tempe.setColumns(10);
 		t_tempe.setBounds(178, 281, 95, 20);
 		frame.getContentPane().add(t_tempe);
-		
+
 		t_fournisseur = new JTextField();
 		t_fournisseur.setColumns(10);
 		t_fournisseur.setBounds(178, 315, 95, 20);
 		frame.getContentPane().add(t_fournisseur);
-		
+
 		t_degre = new JTextField();
 		t_degre.setColumns(10);
 		t_degre.setBounds(178, 349, 95, 20);
 		frame.getContentPane().add(t_degre);
-		
+
 		t_volume = new JTextField();
 		t_volume.setColumns(10);
 		t_volume.setBounds(178, 383, 95, 20);
 		frame.getContentPane().add(t_volume);
-		
+
 		t_efferve = new JTextField();
 		t_efferve.setColumns(10);
 		t_efferve.setBounds(460, 125, 95, 20);
 		frame.getContentPane().add(t_efferve);
-		
+
 		t_note = new JTextField();
 		t_note.setColumns(10);
 		t_note.setBounds(460, 154, 95, 20);
 		frame.getContentPane().add(t_note);
-		
+
 		t_qtt = new JTextField();
 		t_qtt.setColumns(10);
 		t_qtt.setBounds(460, 188, 95, 20);
 		frame.getContentPane().add(t_qtt);
-		
+
 		t_dispo = new JTextField();
 		t_dispo.setColumns(10);
 		t_dispo.setBounds(460, 222, 95, 20);
 		frame.getContentPane().add(t_dispo);
-		
+
 		t_emplacement = new JTextField();
 		t_emplacement.setColumns(10);
 		t_emplacement.setBounds(460, 252, 95, 20);
 		frame.getContentPane().add(t_emplacement);
-		
+
 		t_comment = new JTextField();
 		t_comment.setColumns(10);
 		t_comment.setBounds(460, 281, 95, 20);
 		frame.getContentPane().add(t_comment);
-		
+
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
 		label_1.setBounds(0, 0, 978, 544);
 		frame.getContentPane().add(label_1);
+		
+		JLabel lblRobe = new JLabel("robe :");
+		lblRobe.setBounds(350, 368, 46, 14);
+		frame.getContentPane().add(lblRobe);
+		
+		t_robe = new JTextField();
+		t_robe.setBounds(406, 365, 86, 20);
+		frame.getContentPane().add(t_robe);
+		t_robe.setColumns(10);
 	}
+
 }
