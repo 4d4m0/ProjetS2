@@ -110,16 +110,13 @@ public class Emplacement {
 		table.setBounds(635, 131, 335, 231);
 		frame.getContentPane().add(table);
 		
-<<<<<<< HEAD
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
 		lblNewLabel.setBounds(12, 128, 331, 229);
-=======
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
-		lblNewLabel.setBounds(30, 124, 331, 235);
->>>>>>> master
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblNewLabel1 = new JLabel("New label");
+		lblNewLabel1.setIcon(new ImageIcon("cave-a-vin.jpg"));
+		lblNewLabel1.setBounds(30, 124, 331, 235);
+		frame.getContentPane().add(lblNewLabel1);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));

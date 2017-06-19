@@ -230,7 +230,7 @@ public class Stock {
 		comboBox_4.setBounds(462, 334, 133, 20);
 		frame.getContentPane().add(comboBox_4);
 
-		Liste_Bttl = new TableModel[][] { 
+		/*Liste_Bttl = new TableModel[][] { 
 			{Bttl_1 = new Bouteille("Chateau Lecroc", "Bordeau", "France", null, 2000, "rouge", 13, "Cuvelier Fauvarque", 10,
 					75, "non", 3, 4, "oui", 3, "RAS")},
 			{Bttl_2 = new Bouteille("Chateau Leduc", "Bourgogne", "France", null, 2001, "rouge", 13, "Cuvelier Fauvarque",
@@ -241,8 +241,8 @@ public class Stock {
 
 		String[] entete = { "nom", "region", "pays", "millesime", "cuvee", "robe", "temperature", "fournisseur",
 				"degre", "volume", "effervescent", "note", "quantite", "disponible", "emplacement", "commentaire" };
-
-		table_2 = new JTable(Liste_Bttl, entete);
+*/
+		table_2 = new JTable();
 		table_2.setBounds(640, 350, 274, -156);
 		frame.getContentPane().add(table_2);
 
