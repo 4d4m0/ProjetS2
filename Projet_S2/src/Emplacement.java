@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class Emplacement {
 
@@ -53,7 +54,9 @@ public class Emplacement {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnRetour = new JButton("Retour");
-		btnRetour.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnRetour.setForeground(Color.WHITE);
+		btnRetour.setBackground(new Color(51, 102, 0));
+		btnRetour.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnRetour.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -66,41 +69,55 @@ public class Emplacement {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnRetour.setBounds(420, 527, 89, 23);
+		btnRetour.setBounds(445, 517, 89, 23);
 		frame.getContentPane().add(btnRetour);
 		
 		JLabel label = new JLabel("Gestionnaire de Cave");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		label.setBounds(362, 11, 204, 31);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setForeground(new Color(102, 0, 204));
+		label.setFont(new Font("Wide Latin", Font.BOLD, 20));
+		label.setBounds(0, 0, 982, 31);
 		frame.getContentPane().add(label);
 		
 		JLabel lblEmplacement = new JLabel("Emplacement");
-		lblEmplacement.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblEmplacement.setBounds(403, 53, 123, 23);
+		lblEmplacement.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEmplacement.setForeground(new Color(0, 0, 51));
+		lblEmplacement.setFont(new Font("Wide Latin", Font.BOLD, 14));
+		lblEmplacement.setBounds(0, 44, 982, 23);
 		frame.getContentPane().add(lblEmplacement);
 		
 		JButton btnCrerUnEmplacement = new JButton("Cr\u00E9er un emplacement");
-		btnCrerUnEmplacement.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnCrerUnEmplacement.setBounds(74, 370, 204, 23);
+		btnCrerUnEmplacement.setBackground(new Color(51, 102, 0));
+		btnCrerUnEmplacement.setForeground(Color.WHITE);
+		btnCrerUnEmplacement.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
+		btnCrerUnEmplacement.setBounds(12, 370, 331, 23);
 		frame.getContentPane().add(btnCrerUnEmplacement);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(Color.LIGHT_GRAY);
 		comboBox.setBounds(522, 128, 89, 20);
 		frame.getContentPane().add(comboBox);
 		
 		JButton btnModifierUnEmplacement = new JButton("Modifier un emplacement");
-		btnModifierUnEmplacement.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnModifierUnEmplacement.setBounds(643, 370, 204, 23);
+		btnModifierUnEmplacement.setForeground(Color.WHITE);
+		btnModifierUnEmplacement.setBackground(new Color(51, 102, 0));
+		btnModifierUnEmplacement.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
+		btnModifierUnEmplacement.setBounds(635, 370, 335, 23);
 		frame.getContentPane().add(btnModifierUnEmplacement);
 		
 		table = new JTable();
 		table.setBackground(Color.GRAY);
-		table.setBounds(635, 131, 339, 231);
+		table.setBounds(635, 131, 335, 231);
 		frame.getContentPane().add(table);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\User\\Desktop\\Cour IUT\\GitProjet_S2\\ProjetS2\\Projet_S2\\cave-a-vin.jpg"));
-		lblNewLabel.setBounds(30, 124, 331, 235);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
+		lblNewLabel.setBounds(12, 128, 331, 229);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
+		label_1.setBounds(0, 0, 982, 553);
+		frame.getContentPane().add(label_1);
 	}
 }
