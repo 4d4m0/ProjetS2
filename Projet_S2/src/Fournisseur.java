@@ -18,6 +18,12 @@ public class Fournisseur {
 
 	static JFrame frame;
 	private JTable table;
+	private String nom;
+	private String adresse;
+	private String CP;
+	private String ville;
+	private String telephone;
+	private Fournisseur[] ListeFournisseur ={f1,f2};
 
 	/**
 	 * Launch the application.
@@ -43,9 +49,58 @@ public class Fournisseur {
 		initialize();
 	}
 
+/*	public void CreerFournisseur(String nom, String adresse, String CP, String ville, String telephone) {
+		this.nom = nom;
+		this.adresse = adresse;
+		this.CP = CP;
+		this.ville = ville;
+		this.telephone = telephone;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getCP() {
+		return CP;
+	}
+
+	public void setCP(String cP) {
+		CP = cP;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}*/
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 600);
@@ -70,7 +125,7 @@ public class Fournisseur {
 		btnRetour.setBounds(445, 517, 89, 23);
 		frame.getContentPane().add(btnRetour);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox(ListeFournisseur);
 		comboBox.setForeground(Color.LIGHT_GRAY);
 		comboBox.setBounds(51, 156, 71, 20);
 		frame.getContentPane().add(comboBox);
@@ -116,7 +171,8 @@ public class Fournisseur {
 		lblTlphone.setBounds(508, 299, 113, 14);
 		frame.getContentPane().add(lblTlphone);
 		
-		JLabel lblTexte = new JLabel("TEXTE ...");
+		JLabel lblTexte = new JLabel();
+		lblTexte.setText((String) comboBox.getSelectedItem().toString());
 		lblTexte.setForeground(Color.WHITE);
 		lblTexte.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblTexte.setBounds(677, 193, 179, 14);
@@ -154,7 +210,7 @@ public class Fournisseur {
 		frame.getContentPane().add(btnModifierLeFournisseur);
 		
 		JLabel label_5 = new JLabel("");
-		label_5.setIcon(new ImageIcon("C:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\Projet_S2\\verre_vin_qualit\u00E9.jpg"));
+		label_5.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
 		label_5.setBounds(0, 0, 982, 553);
 		frame.getContentPane().add(label_5);
 	}
