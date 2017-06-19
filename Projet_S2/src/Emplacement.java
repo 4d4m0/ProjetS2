@@ -76,14 +76,14 @@ public class Emplacement {
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setForeground(new Color(102, 0, 204));
 		label.setFont(new Font("Wide Latin", Font.BOLD, 20));
-		label.setBounds(0, 0, 982, 31);
+		label.setBounds(0, 13, 982, 31);
 		frame.getContentPane().add(label);
 		
 		JLabel lblEmplacement = new JLabel("Emplacement");
 		lblEmplacement.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmplacement.setForeground(new Color(0, 0, 51));
 		lblEmplacement.setFont(new Font("Wide Latin", Font.BOLD, 14));
-		lblEmplacement.setBounds(0, 44, 982, 23);
+		lblEmplacement.setBounds(0, 57, 982, 23);
 		frame.getContentPane().add(lblEmplacement);
 		
 		JButton btnCrerUnEmplacement = new JButton("Cr\u00E9er un emplacement");
@@ -113,9 +113,9 @@ public class Emplacement {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
 		lblNewLabel.setBounds(12, 128, 331, 229);
-		JLabel lblNewLabel1 = new JLabel("New label");
+		JLabel lblNewLabel1 = new JLabel("");
 		lblNewLabel1.setIcon(new ImageIcon("cave-a-vin.jpg"));
-		lblNewLabel1.setBounds(30, 124, 331, 235);
+		lblNewLabel1.setBounds(12, 128, 331, 235);
 		frame.getContentPane().add(lblNewLabel1);
 		
 		JLabel label_1 = new JLabel("");

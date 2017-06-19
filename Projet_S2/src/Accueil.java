@@ -79,7 +79,7 @@ public class Accueil {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(142, 186, 228, 31);
+		btnNewButton.setBounds(125, 186, 228, 31);
 		frame.getContentPane().add(btnNewButton);
 
 		JButton btnVoirLes = new JButton("G\u00E9rer les emplacements");
@@ -98,7 +98,7 @@ public class Accueil {
 			}
 		});
 		btnVoirLes.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
-		btnVoirLes.setBounds(142, 322, 228, 31);
+		btnVoirLes.setBounds(125, 322, 228, 31);
 		frame.getContentPane().add(btnVoirLes);
 
 		JButton btnVoirLesCommandes = new JButton("Voir les commandes");
@@ -145,13 +145,12 @@ public class Accueil {
 		lblGestionnaireDeCave.setForeground(new Color(102, 0, 204));
 		lblGestionnaireDeCave.setBackground(Color.WHITE);
 		lblGestionnaireDeCave.setFont(new Font("Wide Latin", Font.BOLD | Font.ITALIC, 28));
-		lblGestionnaireDeCave.setBounds(0, 57, 978, 60);
-		lblGestionnaireDeCave.setBounds(210, 57, 540, 60);
+		lblGestionnaireDeCave.setBounds(12, 57, 958, 60);
 		frame.getContentPane().add(lblGestionnaireDeCave);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon("IUT-01.png"));
-		label_1.setBounds(12, 506, 157, 47);
+		label_1.setBounds(0, 506, 157, 47);
 		frame.getContentPane().add(label_1);
 		
 		JLabel label = new JLabel("");
@@ -159,7 +158,7 @@ public class Accueil {
 		label.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
 		label.setBackground(new Color(0, 0, 0));
 		label.setIcon(new ImageIcon("verre_vin_qualité.jpg"));
-		label.setBounds(0, 0, 978, 553);
+		label.setBounds(0, 0, 982, 553);
 		frame.getContentPane().add(label);
 	}
 }
