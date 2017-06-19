@@ -147,7 +147,7 @@ public class Accueil {
 		frame.getContentPane().add(lblGestionnaireDeCave);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\Projet_S2\\IUT-01.png"));
+		label_1.setIcon(new ImageIcon("IUT-01.png"));
 		label_1.setBounds(12, 506, 157, 47);
 		frame.getContentPane().add(label_1);
 		
@@ -155,7 +155,7 @@ public class Accueil {
 		label.setForeground(new Color(255, 255, 255));
 		label.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
 		label.setBackground(new Color(0, 0, 0));
-		label.setIcon(new ImageIcon("C:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\Projet_S2\\verre_vin_qualit\u00E9.jpg"));
+		label.setIcon(new ImageIcon("verre_vin_qualité.jpg"));
 		label.setBounds(12, 0, 958, 553);
 		frame.getContentPane().add(label);
 	}
