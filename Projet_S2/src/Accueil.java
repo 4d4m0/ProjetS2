@@ -145,7 +145,11 @@ public class Accueil {
 		lblGestionnaireDeCave.setForeground(new Color(102, 0, 204));
 		lblGestionnaireDeCave.setBackground(Color.WHITE);
 		lblGestionnaireDeCave.setFont(new Font("Wide Latin", Font.BOLD | Font.ITALIC, 28));
+<<<<<<< HEAD
 		lblGestionnaireDeCave.setBounds(12, 57, 958, 60);
+=======
+		lblGestionnaireDeCave.setBounds(210, 57, 540, 60);
+>>>>>>> master
 		frame.getContentPane().add(lblGestionnaireDeCave);
 		
 		JLabel label_1 = new JLabel("");
