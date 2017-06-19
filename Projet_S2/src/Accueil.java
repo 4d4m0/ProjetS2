@@ -145,7 +145,6 @@ public class Accueil {
 		lblGestionnaireDeCave.setForeground(new Color(102, 0, 204));
 		lblGestionnaireDeCave.setBackground(Color.WHITE);
 		lblGestionnaireDeCave.setFont(new Font("Wide Latin", Font.BOLD | Font.ITALIC, 28));
-		lblGestionnaireDeCave.setBounds(0, 57, 978, 60);
 		lblGestionnaireDeCave.setBounds(210, 57, 540, 60);
 		frame.getContentPane().add(lblGestionnaireDeCave);
 		
