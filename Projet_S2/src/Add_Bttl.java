@@ -35,7 +35,7 @@ public class Add_Bttl {
 	private JTextField t_emplacement;
 	private JTextField t_comment;
 	private JTextField t_robe;
-	public ArrayList<Bouteille> liste_stock;
+	public ArrayList<Bouteille> stock = new ArrayList<Bouteille>();
 
 	/**
 	 * Launch the application.
@@ -60,16 +60,14 @@ public class Add_Bttl {
 		initialize();
 	}
 
-	public Bouteille afficher_Bttl(Bouteille Bttl){
-		return Bttl;
-	}
 	public void ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime, JTextField cuvee,
 			JTextField robe,JTextField temp, JTextField fournisseur, JTextField degre, JTextField volume, JTextField effer,
 			JTextField note, JTextField qtt, JTextField dispo, JTextField emplacement, JTextField comment) {
 		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(), millesime.getText(),
 				cuvee.getText(),robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(), volume.getText(),
 				effer.getText(), note.getText(), qtt.getText(),dispo.getText(),emplacement.getText(),comment.getText());
-		System.out.println(n_Bttl);
+			stock.add(n_Bttl);
+		System.out.println(stock);
 	}
 	/**
 	 * Initialize the contents of the frame.
@@ -238,8 +236,6 @@ public class Add_Bttl {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				ajouter_Bttl(t_nom,t_region,t_pays,t_millesime,t_cuvee,t_robe,t_tempe,t_fournisseur,t_degre,t_volume,t_efferve,t_note,t_qtt,t_dispo,t_emplacement,t_comment);
-				//afficher_Bttl(n_Btll);
-				//liste_stock.add(ajouter_Bttl(t_nom,t_region,t_pays,t_millesime,t_cuvee,t_robe,t_tempe,t_fournisseur,t_degre,t_volume,t_efferve,t_note,t_qtt,t_dispo,t_emplacement,t_comment));
 			}
 		});
 		btnValider.addActionListener(new ActionListener() {
