@@ -110,9 +110,15 @@ public class Emplacement {
 		table.setBounds(635, 131, 335, 231);
 		frame.getContentPane().add(table);
 		
+<<<<<<< HEAD
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
 		lblNewLabel.setBounds(12, 128, 331, 229);
+=======
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("cave-a-vin.jpg"));
+		lblNewLabel.setBounds(30, 124, 331, 235);
+>>>>>>> master
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel label_1 = new JLabel("");
