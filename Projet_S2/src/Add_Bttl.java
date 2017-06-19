@@ -10,6 +10,9 @@ import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class Add_Bttl {
 
@@ -64,6 +67,8 @@ public class Add_Bttl {
 		frame.getContentPane().setLayout(null);
 
 		JButton btnRetourAuxStocks = new JButton("Retour aux Stocks");
+		btnRetourAuxStocks.setForeground(Color.WHITE);
+		btnRetourAuxStocks.setBackground(new Color(51, 102, 0));
 		btnRetourAuxStocks.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -75,117 +80,143 @@ public class Add_Bttl {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnRetourAuxStocks.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnRetourAuxStocks.setBounds(412, 527, 151, 23);
+		btnRetourAuxStocks.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
+		btnRetourAuxStocks.setBounds(406, 505, 176, 23);
 		frame.getContentPane().add(btnRetourAuxStocks);
 
 		JLabel label = new JLabel("Gestionnaire de Cave");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		label.setBounds(387, 11, 204, 31);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setForeground(new Color(102, 0, 204));
+		label.setFont(new Font("Wide Latin", Font.BOLD, 20));
+		label.setBounds(0, 0, 978, 43);
 		frame.getContentPane().add(label);
 
 		JLabel lblModifier = new JLabel("Modifier");
-		lblModifier.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblModifier.setBounds(454, 53, 58, 14);
+		lblModifier.setHorizontalAlignment(SwingConstants.CENTER);
+		lblModifier.setForeground(new Color(0, 0, 51));
+		lblModifier.setFont(new Font("Wide Latin", Font.BOLD, 14));
+		lblModifier.setBounds(0, 40, 978, 23);
 		frame.getContentPane().add(lblModifier);
 
 		JLabel lblNom = new JLabel("Nom :");
-		lblNom.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNom.setForeground(Color.WHITE);
+		lblNom.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNom.setBounds(25, 128, 123, 14);
 		frame.getContentPane().add(lblNom);
 
 		JLabel lblRgion = new JLabel("R\u00E9gion :");
-		lblRgion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblRgion.setForeground(Color.WHITE);
+		lblRgion.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblRgion.setBounds(25, 153, 123, 23);
 		frame.getContentPane().add(lblRgion);
 
 		JLabel lblPays = new JLabel("Pays :");
-		lblPays.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblPays.setForeground(Color.WHITE);
+		lblPays.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblPays.setBounds(25, 187, 123, 23);
 		frame.getContentPane().add(lblPays);
 
 		JLabel lblMillsime = new JLabel("Mill\u00E9sime :");
-		lblMillsime.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblMillsime.setForeground(Color.WHITE);
+		lblMillsime.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblMillsime.setBounds(25, 221, 123, 23);
 		frame.getContentPane().add(lblMillsime);
 
 		JLabel lblCuve = new JLabel("Cuv\u00E9e :");
-		lblCuve.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblCuve.setForeground(Color.WHITE);
+		lblCuve.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblCuve.setBounds(25, 255, 123, 14);
 		frame.getContentPane().add(lblCuve);
 
 		JLabel lblTemprature = new JLabel("Temp\u00E9rature :");
-		lblTemprature.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTemprature.setForeground(Color.WHITE);
+		lblTemprature.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblTemprature.setBounds(25, 280, 123, 23);
 		frame.getContentPane().add(lblTemprature);
 
 		JLabel lblFournisseur = new JLabel("Fournisseur :");
-		lblFournisseur.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFournisseur.setForeground(Color.WHITE);
+		lblFournisseur.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblFournisseur.setBounds(25, 314, 123, 23);
 		frame.getContentPane().add(lblFournisseur);
 
 		JLabel lblDegrDalcool = new JLabel("Degr\u00E9 d'alcool :");
-		lblDegrDalcool.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDegrDalcool.setBounds(25, 348, 123, 23);
+		lblDegrDalcool.setForeground(Color.WHITE);
+		lblDegrDalcool.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblDegrDalcool.setBounds(25, 348, 136, 23);
 		frame.getContentPane().add(lblDegrDalcool);
 
 		JLabel lblVolumeBouteille = new JLabel("Volume bouteille :");
-		lblVolumeBouteille.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblVolumeBouteille.setBounds(25, 382, 123, 23);
+		lblVolumeBouteille.setForeground(Color.WHITE);
+		lblVolumeBouteille.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblVolumeBouteille.setBounds(25, 382, 149, 23);
 		frame.getContentPane().add(lblVolumeBouteille);
 
 		JLabel lblEffervescent = new JLabel("Effervescent :");
-		lblEffervescent.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblEffervescent.setBounds(263, 130, 136, 14);
+		lblEffervescent.setForeground(Color.WHITE);
+		lblEffervescent.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEffervescent.setBounds(291, 128, 136, 14);
 		frame.getContentPane().add(lblEffervescent);
 
 		JLabel lblNote = new JLabel("Note :");
-		lblNote.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNote.setBounds(263, 159, 136, 14);
+		lblNote.setForeground(Color.WHITE);
+		lblNote.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNote.setBounds(291, 157, 136, 14);
 		frame.getContentPane().add(lblNote);
 
 		JLabel lblQuantit = new JLabel("Quantit\u00E9 :");
-		lblQuantit.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblQuantit.setBounds(263, 193, 136, 17);
+		lblQuantit.setForeground(Color.WHITE);
+		lblQuantit.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblQuantit.setBounds(291, 190, 136, 17);
 		frame.getContentPane().add(lblQuantit);
 
 		JLabel lblDisponible = new JLabel("Disponible :");
-		lblDisponible.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblDisponible.setBounds(263, 227, 136, 17);
+		lblDisponible.setForeground(Color.WHITE);
+		lblDisponible.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblDisponible.setBounds(291, 224, 136, 17);
 		frame.getContentPane().add(lblDisponible);
 
 		JLabel lblEmplacement = new JLabel("Emplacement :");
-		lblEmplacement.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblEmplacement.setBounds(263, 257, 136, 23);
+		lblEmplacement.setForeground(Color.WHITE);
+		lblEmplacement.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEmplacement.setBounds(291, 251, 136, 23);
 		frame.getContentPane().add(lblEmplacement);
 
 		JLabel lblNotesParticulires = new JLabel("Notes Particuli\u00E8res :");
-		lblNotesParticulires.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNotesParticulires.setBounds(263, 286, 136, 14);
+		lblNotesParticulires.setForeground(Color.WHITE);
+		lblNotesParticulires.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNotesParticulires.setBounds(291, 284, 166, 14);
 		frame.getContentPane().add(lblNotesParticulires);
 
 		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(Color.LIGHT_GRAY);
 		comboBox.setBounds(628, 127, 72, 20);
 		frame.getContentPane().add(comboBox);
 
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setForeground(Color.LIGHT_GRAY);
 		comboBox_1.setBounds(710, 127, 72, 20);
 		frame.getContentPane().add(comboBox_1);
 
 		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setForeground(Color.LIGHT_GRAY);
 		comboBox_2.setBounds(792, 127, 72, 20);
 		frame.getContentPane().add(comboBox_2);
 
 		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setForeground(Color.LIGHT_GRAY);
 		comboBox_3.setBounds(874, 127, 72, 20);
 		frame.getContentPane().add(comboBox_3);
 
 		t_nom = new JTextField();
-		t_nom.setBounds(158, 127, 95, 20);
+		t_nom.setBounds(178, 125, 95, 20);
 		frame.getContentPane().add(t_nom);
 		t_nom.setColumns(10);
 
 		JButton btnValider = new JButton("Valider");
+		btnValider.setBackground(new Color(51, 102, 0));
+		btnValider.setForeground(Color.WHITE);
+		btnValider.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -198,77 +229,82 @@ public class Add_Bttl {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnValider.setBounds(158, 433, 89, 23);
+		btnValider.setBounds(178, 430, 95, 23);
 		frame.getContentPane().add(btnValider);
 		
 		t_region = new JTextField();
 		t_region.setColumns(10);
-		t_region.setBounds(158, 156, 95, 20);
+		t_region.setBounds(178, 154, 95, 20);
 		frame.getContentPane().add(t_region);
 		
 		t_pays = new JTextField();
 		t_pays.setColumns(10);
-		t_pays.setBounds(158, 190, 95, 20);
+		t_pays.setBounds(178, 188, 95, 20);
 		frame.getContentPane().add(t_pays);
 		
 		t_millesime = new JTextField();
 		t_millesime.setColumns(10);
-		t_millesime.setBounds(158, 224, 95, 20);
+		t_millesime.setBounds(178, 222, 95, 20);
 		frame.getContentPane().add(t_millesime);
 		
 		t_cuvee = new JTextField();
 		t_cuvee.setColumns(10);
-		t_cuvee.setBounds(158, 254, 95, 20);
+		t_cuvee.setBounds(178, 252, 95, 20);
 		frame.getContentPane().add(t_cuvee);
 		
 		t_tempe = new JTextField();
 		t_tempe.setColumns(10);
-		t_tempe.setBounds(158, 283, 95, 20);
+		t_tempe.setBounds(178, 281, 95, 20);
 		frame.getContentPane().add(t_tempe);
 		
 		t_fournisseur = new JTextField();
 		t_fournisseur.setColumns(10);
-		t_fournisseur.setBounds(158, 317, 95, 20);
+		t_fournisseur.setBounds(178, 315, 95, 20);
 		frame.getContentPane().add(t_fournisseur);
 		
 		t_degre = new JTextField();
 		t_degre.setColumns(10);
-		t_degre.setBounds(158, 351, 95, 20);
+		t_degre.setBounds(178, 349, 95, 20);
 		frame.getContentPane().add(t_degre);
 		
 		t_volume = new JTextField();
 		t_volume.setColumns(10);
-		t_volume.setBounds(158, 385, 95, 20);
+		t_volume.setBounds(178, 383, 95, 20);
 		frame.getContentPane().add(t_volume);
 		
 		t_efferve = new JTextField();
 		t_efferve.setColumns(10);
-		t_efferve.setBounds(412, 127, 95, 20);
+		t_efferve.setBounds(460, 125, 95, 20);
 		frame.getContentPane().add(t_efferve);
 		
 		t_note = new JTextField();
 		t_note.setColumns(10);
-		t_note.setBounds(412, 156, 95, 20);
+		t_note.setBounds(460, 154, 95, 20);
 		frame.getContentPane().add(t_note);
 		
 		t_qtt = new JTextField();
 		t_qtt.setColumns(10);
-		t_qtt.setBounds(412, 190, 95, 20);
+		t_qtt.setBounds(460, 188, 95, 20);
 		frame.getContentPane().add(t_qtt);
 		
 		t_dispo = new JTextField();
 		t_dispo.setColumns(10);
-		t_dispo.setBounds(412, 224, 95, 20);
+		t_dispo.setBounds(460, 222, 95, 20);
 		frame.getContentPane().add(t_dispo);
 		
 		t_emplacement = new JTextField();
 		t_emplacement.setColumns(10);
-		t_emplacement.setBounds(412, 254, 95, 20);
+		t_emplacement.setBounds(460, 252, 95, 20);
 		frame.getContentPane().add(t_emplacement);
 		
 		t_comment = new JTextField();
 		t_comment.setColumns(10);
-		t_comment.setBounds(412, 283, 95, 20);
+		t_comment.setBounds(460, 281, 95, 20);
 		frame.getContentPane().add(t_comment);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
+		label_1.setBounds(0, 0, 978, 544);
+		frame.getContentPane().add(label_1);
 	}
 }

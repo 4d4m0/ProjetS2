@@ -10,6 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 /* 
  * 														/!\	MAIN CLASS /!\
@@ -140,10 +141,11 @@ public class Accueil {
 
 			//Titre
 		JLabel lblGestionnaireDeCave = new JLabel("Gestionnaire de Cave");
-		lblGestionnaireDeCave.setForeground(new Color(204, 0, 153));
+		lblGestionnaireDeCave.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGestionnaireDeCave.setForeground(new Color(102, 0, 204));
 		lblGestionnaireDeCave.setBackground(Color.WHITE);
 		lblGestionnaireDeCave.setFont(new Font("Wide Latin", Font.BOLD | Font.ITALIC, 28));
-		lblGestionnaireDeCave.setBounds(210, 57, 559, 60);
+		lblGestionnaireDeCave.setBounds(0, 57, 978, 60);
 		frame.getContentPane().add(lblGestionnaireDeCave);
 		
 		JLabel label_1 = new JLabel("");
@@ -156,7 +158,7 @@ public class Accueil {
 		label.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
 		label.setBackground(new Color(0, 0, 0));
 		label.setIcon(new ImageIcon("verre_vin_qualité.jpg"));
-		label.setBounds(12, 0, 958, 553);
+		label.setBounds(0, 0, 978, 553);
 		frame.getContentPane().add(label);
 	}
 }
