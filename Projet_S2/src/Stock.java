@@ -1,17 +1,16 @@
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.JList;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
 
 public class Stock {
 
@@ -22,11 +21,17 @@ public class Stock {
 	int nbBtlRose = 50;
 	int nbBtlEffer = 100;
 	int totalBtl = nbBtlBlanc + nbBtlRouge + nbBtlRose;
-	String[] listeTypeVin ={"Rouge","Blanc","Rose"};
-	String[] listeFournisseur ={"Cuvelier Fauvarque","F1","F2"};
-	String[] listeCuvee={"2000","2001","2002","2003"};
-	String[] listeRegion={"Bordeau","Jura","Aquitaine","Bourgogne"};
-	String[] listeVolume={"75","1","1.5","3","4.5","6","9","12","15","18"};
+	String[] listeTypeVin = { "Rouge", "Blanc", "Rose" };
+	String[] listeFournisseur = { "Cuvelier Fauvarque", "F1", "F2" };
+	String[] listeCuvee = { "2000", "2001", "2002", "2003" };
+	String[] listeRegion = { "Bordeau", "Jura", "Aquitaine", "Bourgogne" };
+	String[] listeVolume = { "75", "1", "1.5", "3", "4.5", "6", "9", "12", "15", "18" };
+	private JTable table_2;
+
+	public Bouteille Bttl_1;
+	public Bouteille Bttl_2;
+	public Bouteille Bttl_3;
+	public TableModel[][] Liste_Bttl;
 
 	/**
 	 * Launch the application.
@@ -50,11 +55,13 @@ public class Stock {
 	 */
 	public Stock() {
 		initialize();
+		
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 600);
@@ -100,10 +107,6 @@ public class Stock {
 		lblListeDesBouteilles.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblListeDesBouteilles.setBounds(682, 140, 163, 22);
 		frame.getContentPane().add(lblListeDesBouteilles);
-
-		JList list = new JList();
-		list.setBounds(682, 173, 259, 203);
-		frame.getContentPane().add(list);
 
 		JLabel lblVinBlanc = new JLabel("Vin Blanc :");
 		lblVinBlanc.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -161,7 +164,7 @@ public class Stock {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.setVisible(false);
-				Add_Bttl modif = new Add_Bttl();
+				// Add_Bttl modif = new Add_Bttl();
 				Add_Bttl.frame.setVisible(true);
 			}
 		});
@@ -226,5 +229,22 @@ public class Stock {
 		JComboBox comboBox_4 = new JComboBox(listeVolume);
 		comboBox_4.setBounds(462, 334, 133, 20);
 		frame.getContentPane().add(comboBox_4);
+
+		/*Liste_Bttl = new TableModel[][] { 
+			{Bttl_1 = new Bouteille("Chateau Lecroc", "Bordeau", "France", null, 2000, "rouge", 13, "Cuvelier Fauvarque", 10,
+					75, "non", 3, 4, "oui", 3, "RAS")},
+			{Bttl_2 = new Bouteille("Chateau Leduc", "Bourgogne", "France", null, 2001, "rouge", 13, "Cuvelier Fauvarque",
+					10, 75, "non", 3, 4, "oui", 3, "Bon avec de la viande Rouge")},
+			{Bttl_3 = new Bouteille("Chateau Leduc", "Bourgogne", "France", "medaille argent", 2001, "rouge", 13,
+					"Cuvelier Fauvarque", 10, 75, "non", 3, 4, "oui", 3, null)},
+			};
+
+		String[] entete = { "nom", "region", "pays", "millesime", "cuvee", "robe", "temperature", "fournisseur",
+				"degre", "volume", "effervescent", "note", "quantite", "disponible", "emplacement", "commentaire" };
+*/
+		table_2 = new JTable();
+		table_2.setBounds(640, 350, 274, -156);
+		frame.getContentPane().add(table_2);
+
 	}
 }
