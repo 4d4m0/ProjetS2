@@ -164,7 +164,7 @@ public class Stock {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.setVisible(false);
-				// Add_Bttl modif = new Add_Bttl();
+				Add_Bttl modif = new Add_Bttl();
 				Add_Bttl.frame.setVisible(true);
 			}
 		});

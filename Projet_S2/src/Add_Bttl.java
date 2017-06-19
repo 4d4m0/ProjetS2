@@ -32,7 +32,6 @@ public class Add_Bttl {
 	private JTextField t_dispo;
 	private JTextField t_emplacement;
 	private JTextField t_comment;
-
 	/**
 	 * Launch the application.
 	 */
