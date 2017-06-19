@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+GitRepositoriesView.GitDirectories=C\:\\Users\\deryc\\Documents\\github\\ProjetS2\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;
+eclipse.preferences.version=1
+=======
 GitRepositoriesView.GitDirectories=C\:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\.git;
 GitRepositoriesView.GitDirectories.relative=.git;
 eclipse.preferences.version=1
+>>>>>>> master
