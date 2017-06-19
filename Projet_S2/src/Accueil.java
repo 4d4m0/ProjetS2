@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 /* 
  * 														/!\	MAIN CLASS /!\
@@ -55,11 +57,14 @@ public class Accueil {
 	 */
 	void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JButton btnNewButton = new JButton("Voir les Stocks");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(51, 102, 0));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			// set visible stock et set non visible Accueil
@@ -68,7 +73,7 @@ public class Accueil {
 				Stock.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -77,6 +82,8 @@ public class Accueil {
 		frame.getContentPane().add(btnNewButton);
 
 		JButton btnVoirLes = new JButton("G\u00E9rer les emplacements");
+		btnVoirLes.setForeground(new Color(255, 255, 255));
+		btnVoirLes.setBackground(new Color(51, 102, 0));
 		btnVoirLes.addMouseListener(new MouseAdapter() {
 			@Override
 			// Set visible emplcement et non visible accueil
@@ -89,11 +96,13 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnVoirLes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnVoirLes.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnVoirLes.setBounds(142, 322, 228, 31);
 		frame.getContentPane().add(btnVoirLes);
 
 		JButton btnVoirLesCommandes = new JButton("Voir les commandes");
+		btnVoirLesCommandes.setForeground(new Color(255, 255, 255));
+		btnVoirLesCommandes.setBackground(new Color(51, 102, 0));
 		btnVoirLesCommandes.addMouseListener(new MouseAdapter() {
 			@Override
 			// set visible Commande et set non visible accueil
@@ -106,11 +115,13 @@ public class Accueil {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnVoirLesCommandes.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnVoirLesCommandes.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnVoirLesCommandes.setBounds(625, 186, 228, 31);
 		frame.getContentPane().add(btnVoirLesCommandes);
 
 		JButton btnVoirLesFournisseurs = new JButton("Voir les Fournisseurs");
+		btnVoirLesFournisseurs.setForeground(new Color(255, 255, 255));
+		btnVoirLesFournisseurs.setBackground(new Color(51, 102, 0));
 		btnVoirLesFournisseurs.addMouseListener(new MouseAdapter() {
 			@Override
 			// Set visible Fournisseur et non visible accueil
@@ -123,14 +134,29 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnVoirLesFournisseurs.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnVoirLesFournisseurs.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnVoirLesFournisseurs.setBounds(625, 322, 228, 31);
 		frame.getContentPane().add(btnVoirLesFournisseurs);
 
 			//Titre
 		JLabel lblGestionnaireDeCave = new JLabel("Gestionnaire de Cave");
-		lblGestionnaireDeCave.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblGestionnaireDeCave.setBounds(406, 46, 204, 31);
+		lblGestionnaireDeCave.setForeground(new Color(204, 0, 153));
+		lblGestionnaireDeCave.setBackground(Color.WHITE);
+		lblGestionnaireDeCave.setFont(new Font("Wide Latin", Font.BOLD | Font.ITALIC, 28));
+		lblGestionnaireDeCave.setBounds(210, 57, 559, 60);
 		frame.getContentPane().add(lblGestionnaireDeCave);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon("C:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\Projet_S2\\IUT-01.png"));
+		label_1.setBounds(12, 506, 157, 47);
+		frame.getContentPane().add(label_1);
+		
+		JLabel label = new JLabel("");
+		label.setForeground(new Color(255, 255, 255));
+		label.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));
+		label.setBackground(new Color(0, 0, 0));
+		label.setIcon(new ImageIcon("C:\\Users\\adam\\Documents\\gitKraken repositories\\ProjetS2\\Projet_S2\\verre_vin_qualit\u00E9.jpg"));
+		label.setBounds(12, 0, 958, 553);
+		frame.getContentPane().add(label);
 	}
 }
