@@ -66,7 +66,9 @@ public class Add_Bttl {
 		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(), millesime.getText(),
 				cuvee.getText(),robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(), volume.getText(),
 				effer.getText(), note.getText(), qtt.getText(),dispo.getText(),emplacement.getText(),comment.getText());
-			stock.add(n_Bttl);
+			for(int i=0;i<3;i++){
+				stock.add(n_Bttl);
+			};
 		System.out.println(stock);
 	}
 	/**
