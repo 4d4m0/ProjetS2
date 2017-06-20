@@ -56,7 +56,7 @@ public class Stock {
 	}
 
 	/**
-	 * Create the application
+	 * Create the application.
 	 */
 	public Stock() {
 		initialize();
@@ -117,31 +117,26 @@ public class Stock {
 		frame.getContentPane().add(lblListeDesBouteilles);
 
 		JLabel lblVinBlanc = new JLabel("Vin Blanc :");
-		lblVinBlanc.setForeground(Color.WHITE);
 		lblVinBlanc.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinBlanc.setBounds(10, 205, 97, 14);
 		frame.getContentPane().add(lblVinBlanc);
 
 		JLabel lblVinRouge = new JLabel("Vin Rouge :");
-		lblVinRouge.setForeground(Color.WHITE);
 		lblVinRouge.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinRouge.setBounds(10, 238, 97, 22);
 		frame.getContentPane().add(lblVinRouge);
 
 		JLabel lblVinRos = new JLabel("Vin Ros\u00E9 :");
-		lblVinRos.setForeground(Color.WHITE);
 		lblVinRos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinRos.setBounds(10, 271, 97, 14);
 		frame.getContentPane().add(lblVinRos);
 
 		JLabel lblVinE = new JLabel("Vin Effervescent :");
-		lblVinE.setForeground(Color.WHITE);
 		lblVinE.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinE.setBounds(10, 304, 122, 14);
 		frame.getContentPane().add(lblVinE);
 
 		JLabel lblTotal = new JLabel("Total :");
-		lblTotal.setForeground(Color.WHITE);
 		lblTotal.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblTotal.setBounds(10, 337, 86, 14);
 		frame.getContentPane().add(lblTotal);
@@ -203,7 +198,7 @@ public class Stock {
 		frame.getContentPane().add(btnModifierUneBouteille);
 
 		table = new JTable();
-		table.setBounds(657, 175, 285, 181);
+		table.setBounds(316, 393, 223, 29);
 		frame.getContentPane().add(table);
 
 		JLabel lblStocks = new JLabel("Stocks");
@@ -213,39 +208,34 @@ public class Stock {
 		lblStocks.setBounds(0, 54, 982, 31);
 		frame.getContentPane().add(lblStocks);
 		
-	/*	Connection con =null;
+		Connection con =null;
 		try {
 			con =Connect.connect();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}*/
+		}
 		JLabel lblTotal_1 = new JLabel(Integer.toString(nbBtlBlanc));
-		lblTotal_1.setForeground(Color.WHITE);
 		lblTotal_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblTotal_1.setBounds(154, 205, 46, 14);
 		frame.getContentPane().add(lblTotal_1);
 
 		JLabel label_1 = new JLabel(Integer.toString(nbBtlRouge));
-		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label_1.setBounds(154, 238, 46, 14);
 		frame.getContentPane().add(label_1);
 
 		JLabel label_2 = new JLabel(Integer.toString(nbBtlRose));
-		label_2.setForeground(Color.WHITE);
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label_2.setBounds(154, 271, 46, 14);
 		frame.getContentPane().add(label_2);
 
 		JLabel label_3 = new JLabel(Integer.toString(nbBtlEffer));
-		label_3.setForeground(Color.WHITE);
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label_3.setBounds(154, 304, 46, 14);
 		frame.getContentPane().add(label_3);
 
 		JLabel label_4 = new JLabel(Integer.toString(totalBtl));
-		label_4.setForeground(Color.WHITE);
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label_4.setBounds(154, 337, 46, 14);
 		frame.getContentPane().add(label_4);
