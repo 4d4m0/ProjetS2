@@ -24,6 +24,7 @@ public class Fournisseur {
 	protected ArrayList<CreerFournisseur> ListeFournisseurs = new ArrayList<CreerFournisseur>();
 	CreerFournisseur fournisseur1 =new CreerFournisseur("cuvelier Fauvarque", "20 rue du vin", "59000", "Maubeuge", "01.02.03.04.05");
 	CreerFournisseur fournisseur2 =new CreerFournisseur("cuvelier du monde", "32 rue du vin", "59000", "Maubeuge", "06.07.08.09.10");
+	Listefournisseur.add()
 
 	/**
 	 * Launch the application.
