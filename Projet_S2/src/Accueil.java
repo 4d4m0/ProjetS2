@@ -62,6 +62,8 @@ public class Accueil {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false); 
+
 
 		JButton btnNewButton = new JButton("Voir les Stocks");
 		btnNewButton.setForeground(new Color(255, 255, 255));

@@ -53,6 +53,8 @@ public class ModifierEmplacement {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false); 
+
 		
 		JLabel lblCrerUnEmplacement = new JLabel("Modifier un emplacement");
 		lblCrerUnEmplacement.setForeground(new Color(0, 0, 51));
