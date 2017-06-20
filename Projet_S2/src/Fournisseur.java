@@ -23,7 +23,7 @@ public class Fournisseur {
 	private String CP;
 	private String ville;
 	private String telephone;
-	private Fournisseur[] ListeFournisseur ={f1,f2};
+	private String[] ListeFournisseur ={"Cuvelier Fauvarque","Cuvelier 2","Cuvelier 3"};
 
 	/**
 	 * Launch the application.
@@ -48,54 +48,6 @@ public class Fournisseur {
 	public Fournisseur() {
 		initialize();
 	}
-
-/*	public void CreerFournisseur(String nom, String adresse, String CP, String ville, String telephone) {
-		this.nom = nom;
-		this.adresse = adresse;
-		this.CP = CP;
-		this.ville = ville;
-		this.telephone = telephone;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
-	public String getCP() {
-		return CP;
-	}
-
-	public void setCP(String cP) {
-		CP = cP;
-	}
-
-	public String getVille() {
-		return ville;
-	}
-
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}*/
 
 	/**
 	 * Initialize the contents of the frame.
