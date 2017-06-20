@@ -79,6 +79,8 @@ public class Add_Bttl {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false); 
+
 
 		JButton btnRetourAuxStocks = new JButton("Retour aux Stocks");
 		btnRetourAuxStocks.setForeground(Color.WHITE);

@@ -52,6 +52,8 @@ public class Emplacement {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false); 
+
 		
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.setForeground(Color.WHITE);

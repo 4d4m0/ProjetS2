@@ -73,6 +73,8 @@ public class Stock {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false); 
+
 
 		JLabel label = new JLabel("Gestionnaire de Cave");
 		label.setForeground(new Color(102, 0, 204));
