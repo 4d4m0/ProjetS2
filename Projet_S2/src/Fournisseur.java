@@ -158,6 +158,18 @@ public class Fournisseur {
 		frame.getContentPane().add(label_4);
 		
 		JButton btnModifierLeFournisseur = new JButton("Modifier le fournisseur");
+		btnModifierLeFournisseur.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.setVisible(false);
+				Modif_Fournisseur modif_= new Modif_Fournisseur();
+				Modif_Fournisseur.frame.setVisible(true);
+			}
+		});
+		btnModifierLeFournisseur.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnModifierLeFournisseur.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		btnModifierLeFournisseur.setBackground(new Color(51, 102, 0));
 		btnModifierLeFournisseur.setForeground(Color.WHITE);
