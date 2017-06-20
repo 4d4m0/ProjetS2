@@ -21,10 +21,9 @@ public class Fournisseur {
 	static JFrame frame;
 	private JTable table;
 	private String[] ListeFournisseur ={"Cuvelier Fauvarque","Cuvelier 2","Cuvelier 3"};
-	protected ArrayList<CreerFournisseur> ListeFournisseurs = new ArrayList<CreerFournisseur>();
+	private ArrayList<CreerFournisseur> ListeFournisseurs = new ArrayList<CreerFournisseur>();
 	CreerFournisseur fournisseur1 =new CreerFournisseur("cuvelier Fauvarque", "20 rue du vin", "59000", "Maubeuge", "01.02.03.04.05");
 	CreerFournisseur fournisseur2 =new CreerFournisseur("cuvelier du monde", "32 rue du vin", "59000", "Maubeuge", "06.07.08.09.10");
-	Listefournisseur.add()
 
 	/**
 	 * Launch the application.
@@ -49,7 +48,8 @@ public class Fournisseur {
 	public Fournisseur() {
 		initialize();
 		ListeFournisseurs.add(fournisseur1);
-
+		ListeFournisseurs.add(fournisseur2);
+		System.out.println(ListeFournisseurs);
 	}
 
 	/**

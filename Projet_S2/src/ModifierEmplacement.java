@@ -10,10 +10,12 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ModifierEmplacement {
 
-	private JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -136,6 +138,13 @@ public class ModifierEmplacement {
 		frame.getContentPane().add(btnValider);
 		
 		JButton btnRetour = new JButton("Retour");
+		btnRetour.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			frame.setVisible(false);
+			Emplacement.frame.setVisible(true);
+			}
+		});
 		btnRetour.setBackground(new Color(51, 102, 0));
 		btnRetour.setForeground(new Color(255, 255, 255));
 		btnRetour.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));

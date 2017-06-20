@@ -87,6 +87,18 @@ public class Emplacement {
 		frame.getContentPane().add(lblEmplacement);
 		
 		JButton btnCrerUnEmplacement = new JButton("Cr\u00E9er un emplacement");
+		btnCrerUnEmplacement.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.setVisible(false);
+				CreerEmplacement addEmplace =new CreerEmplacement();
+				CreerEmplacement.frame.setVisible(true);
+			}
+		});
+		btnCrerUnEmplacement.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnCrerUnEmplacement.setBackground(new Color(51, 102, 0));
 		btnCrerUnEmplacement.setForeground(Color.WHITE);
 		btnCrerUnEmplacement.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
@@ -99,6 +111,18 @@ public class Emplacement {
 		frame.getContentPane().add(comboBox);
 		
 		JButton btnModifierUnEmplacement = new JButton("Modifier un emplacement");
+		btnModifierUnEmplacement.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				ModifierEmplacement modifEmplace =new ModifierEmplacement();
+				ModifierEmplacement.frame.setVisible(true);
+			}
+		});
+		btnModifierUnEmplacement.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnModifierUnEmplacement.setForeground(Color.WHITE);
 		btnModifierUnEmplacement.setBackground(new Color(51, 102, 0));
 		btnModifierUnEmplacement.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
