@@ -251,17 +251,6 @@ public class Add_Bttl {
 		});
 		btnValider.setBounds(178, 430, 95, 23);
 		frame.getContentPane().add(btnValider);
-		
-		JButton btnSupprimerLaBouteille = new JButton("Supprimer la bouteille");
-		btnSupprimerLaBouteille.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnSupprimerLaBouteille.setBackground(new Color(51, 102, 0));
-		btnSupprimerLaBouteille.setForeground(Color.WHITE);
-		btnSupprimerLaBouteille.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
-		btnSupprimerLaBouteille.setBounds(692, 382, 201, 25);
-		frame.getContentPane().add(btnSupprimerLaBouteille);
 
 		t_region = new JTextField();
 		t_region.setColumns(10);
@@ -334,9 +323,6 @@ public class Add_Bttl {
 		frame.getContentPane().add(t_comment);
 
 		JLabel lblFont = new JLabel("font");
-		lblFont.setBackground(new Color(51, 102, 0));
-		lblFont.setForeground(Color.WHITE);
-		lblFont.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
 		lblFont.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
 		lblFont.setBounds(0, 0, 982, 553);
 		frame.getContentPane().add(lblFont);
@@ -346,4 +332,5 @@ public class Add_Bttl {
 		frame.getContentPane().add(t_robe);
 		t_robe.setColumns(10);
 	}
+
 }
