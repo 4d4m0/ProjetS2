@@ -8,9 +8,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import org.postgresql.ds.PGSimpleDataSource;
 
 /* 
  * 														/!\	MAIN CLASS /!\
@@ -43,10 +48,19 @@ public class Accueil {
 
 	/**
 	 * Create the application.
+	 * 
+	 * @throws SQLException
 	 */
 	@SuppressWarnings("unused")
-	public Accueil() {
+	public Accueil() throws SQLException {
 		initialize();
+		PGSimpleDataSource ds = new PGSimpleDataSource();
+		ds.setServerName("localhost");
+		ds.setDatabaseName("Projet_S2");
+		try (Connection con = ds.getConnection("postgres", "admin")) {
+
+			System.out.println("Connexion ok");
+		}
 		Stock Stock = new Stock();
 		Commande Commande = new Commande();
 		Emplacement Emplacement = new Emplacement();
@@ -62,8 +76,7 @@ public class Accueil {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setResizable(false); 
-
+		frame.setResizable(false);
 
 		JButton btnNewButton = new JButton("Voir les Stocks");
 		btnNewButton.setForeground(new Color(255, 255, 255));
@@ -141,7 +154,7 @@ public class Accueil {
 		btnVoirLesFournisseurs.setBounds(625, 322, 228, 31);
 		frame.getContentPane().add(btnVoirLesFournisseurs);
 
-			//Titre
+		// Titre
 		JLabel lblGestionnaireDeCave = new JLabel("Gestionnaire de Cave");
 		lblGestionnaireDeCave.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGestionnaireDeCave.setForeground(new Color(102, 0, 204));
@@ -150,12 +163,12 @@ public class Accueil {
 		lblGestionnaireDeCave.setBounds(12, 57, 958, 60);
 		lblGestionnaireDeCave.setBounds(210, 57, 540, 60);
 		frame.getContentPane().add(lblGestionnaireDeCave);
-		
+
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon("IUT-01.png"));
 		label_1.setBounds(0, 506, 157, 47);
 		frame.getContentPane().add(label_1);
-		
+
 		JLabel label = new JLabel("");
 		label.setForeground(new Color(255, 255, 255));
 		label.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 18));

@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
@@ -16,7 +19,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
-public class Add_Bttl {
+public class Add_Bttl  {
 
 	static JFrame frame;
 	private JTextField t_nom;
@@ -36,6 +39,9 @@ public class Add_Bttl {
 	private JTextField t_comment;
 	private JTextField t_robe;
 	public ArrayList<Bouteille> stock = new ArrayList<Bouteille>();
+	public Bouteille b = new Bouteille("vin1", "bordeau", "france", "", null, null, null, null, null, null, null, null,
+			null, null, null, null);
+	public Connection con;
 
 	/**
 	 * Launch the application.
@@ -60,16 +66,20 @@ public class Add_Bttl {
 		initialize();
 	}
 
-	public void ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime, JTextField cuvee,
-			JTextField robe,JTextField temp, JTextField fournisseur, JTextField degre, JTextField volume, JTextField effer,
-			JTextField note, JTextField qtt, JTextField dispo, JTextField emplacement, JTextField comment) {
+	public Bouteille ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime,
+			JTextField cuvee, JTextField robe, JTextField temp, JTextField fournisseur, JTextField degre,
+			JTextField volume, JTextField effer, JTextField note, JTextField qtt, JTextField dispo,
+			JTextField emplacement, JTextField comment) {
 		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(), millesime.getText(),
-				cuvee.getText(),robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(), volume.getText(),
-				effer.getText(), note.getText(), qtt.getText(),dispo.getText(),emplacement.getText(),comment.getText());
-				stock.add(n_Bttl);
-			
-		System.out.println(stock);
+				cuvee.getText(), robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(),
+				volume.getText(), effer.getText(), note.getText(), qtt.getText(), dispo.getText(),
+				emplacement.getText(), comment.getText());
+		// stock.add(n_Bttl);
+		return n_Bttl;
+		// System.out.println(n_Bttl);
+		// System.out.println(stock);
 	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -79,8 +89,7 @@ public class Add_Bttl {
 		frame.setBounds(100, 100, 1000, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setResizable(false); 
-
+		frame.setResizable(false);
 
 		JButton btnRetourAuxStocks = new JButton("Retour aux Stocks");
 		btnRetourAuxStocks.setForeground(Color.WHITE);
@@ -203,7 +212,7 @@ public class Add_Bttl {
 		lblNotesParticulires.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNotesParticulires.setBounds(291, 284, 166, 14);
 		frame.getContentPane().add(lblNotesParticulires);
-		
+
 		JLabel lblRobe = new JLabel("Robe :");
 		lblRobe.setForeground(Color.WHITE);
 		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -234,8 +243,6 @@ public class Add_Bttl {
 		t_nom.setBounds(178, 125, 95, 20);
 		frame.getContentPane().add(t_nom);
 		t_nom.setColumns(10);
-		
-	
 
 		JButton btnValider = new JButton("Valider");
 		btnValider.setBackground(new Color(51, 102, 0));
@@ -244,7 +251,19 @@ public class Add_Bttl {
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				ajouter_Bttl(t_nom,t_region,t_pays,t_millesime,t_cuvee,t_robe,t_tempe,t_fournisseur,t_degre,t_volume,t_efferve,t_note,t_qtt,t_dispo,t_emplacement,t_comment);
+				//try {
+					;
+					stock.add(ajouter_Bttl(t_nom, t_region, t_pays, t_millesime,   // CETTE FONCTION MARCHE NICKEL --> AJOUT SANS PROBLEME DANS STOCK
+							t_cuvee, t_robe, t_tempe, t_fournisseur, t_degre,
+							t_volume, t_efferve, t_note, t_qtt, t_dispo,
+							t_emplacement, t_comment));
+					System.out.println(stock);
+					//insertBttl(con, b);
+				//} catch (SQLException e) {
+					// TODO Auto-generated catch block
+				//	e.printStackTrace();
+				//}
+				;
 			}
 		});
 		btnValider.addActionListener(new ActionListener() {
@@ -253,7 +272,7 @@ public class Add_Bttl {
 		});
 		btnValider.setBounds(178, 430, 95, 23);
 		frame.getContentPane().add(btnValider);
-		
+
 		JButton btnSupprimerLaBouteille = new JButton("Supprimer la bouteille");
 		btnSupprimerLaBouteille.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -342,10 +361,20 @@ public class Add_Bttl {
 		lblFont.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
 		lblFont.setBounds(0, 0, 982, 553);
 		frame.getContentPane().add(lblFont);
-		
+
 		t_robe = new JTextField();
 		t_robe.setBounds(460, 316, 95, 20);
 		frame.getContentPane().add(t_robe);
 		t_robe.setColumns(10);
 	}
+
+/*	public void insertBttl(Connection con, Bouteille B) throws SQLException {
+		try (Statement stmt = con.createStatement()) {
+			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
+					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
+					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
+					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
+		}
+	}*/
+
 }

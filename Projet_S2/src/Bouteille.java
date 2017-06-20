@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class Bouteille {
 	String nom;
 	String region;
@@ -13,7 +17,7 @@ public class Bouteille {
 	String note;
 	String quantite;
 	String disponible;
-	String Emplacement;
+	String emplacement;
 	String commentaire;
 
 	@Override
@@ -21,13 +25,13 @@ public class Bouteille {
 		return "Bouteille [nom=" + nom + ", region=" + region + ", pays=" + pays + ", millesime=" + millesime
 				+ ", cuvee=" + cuvee + ", robe=" + robe + ", temperature=" + temperature + ", fournisseur="
 				+ fournisseur + ", degre=" + degre + ", volume=" + volume + ", effervescent=" + effervescent + ", note="
-				+ note + ", quantite=" + quantite + ", disponible=" + disponible + ", Emplacement=" + Emplacement
+				+ note + ", quantite=" + quantite + ", disponible=" + disponible + ", Emplacement=" + emplacement
 				+ ", commentaire=" + commentaire + "]";
 	}
 
-	public Bouteille(String nom, String region, String pays, String millesime, String cuvee, String robe, String temperature,
-			String fournisseur, String degre, String volume, String effervescent, String note, String quantite, String disponible,
-			String emplacement, String commentaire) {
+	public Bouteille(String nom, String region, String pays, String millesime, String cuvee, String robe,
+			String temperature, String fournisseur, String degre, String volume, String effervescent, String note,
+			String quantite, String disponible, String emplacement, String commentaire) {
 		this.nom = nom;
 		this.region = region;
 		this.pays = pays;
@@ -42,10 +46,17 @@ public class Bouteille {
 		this.note = note;
 		this.quantite = quantite;
 		this.disponible = disponible;
-		this.Emplacement = emplacement;
+		this.emplacement = emplacement;
 		this.commentaire = commentaire;
 	}
-
+	public void insertBttl(Connection con, Bouteille B) throws SQLException {
+		try (Statement stmt = con.createStatement()) {
+			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
+					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
+					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
+					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
+		}
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -159,11 +170,11 @@ public class Bouteille {
 	}
 
 	public String getEmplacement() {
-		return Emplacement;
+		return emplacement;
 	}
 
-	public void setEmplacement(String emplacement) {
-		Emplacement = emplacement;
+	public void setEmplacement(String Emplacement) {
+		emplacement = Emplacement;
 	}
 
 	public String getCommentaire() {
@@ -173,7 +184,5 @@ public class Bouteille {
 	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}
-
-
 
 }
