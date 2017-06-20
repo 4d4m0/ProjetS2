@@ -137,7 +137,7 @@ public class Stock {
 		JLabel lblVinE = new JLabel("Vin Effervescent :");
 		lblVinE.setForeground(Color.WHITE);
 		lblVinE.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblVinE.setBounds(10, 304, 154, 14);
+		lblVinE.setBounds(10, 304, 122, 14);
 		frame.getContentPane().add(lblVinE);
 
 		JLabel lblTotal = new JLabel("Total :");
@@ -209,8 +209,8 @@ public class Stock {
 		JLabel lblStocks = new JLabel("Stocks");
 		lblStocks.setForeground(new Color(0, 0, 51));
 		lblStocks.setHorizontalAlignment(SwingConstants.CENTER);
-		lblStocks.setFont(new Font("Wide Latin", Font.BOLD, 15));
-		lblStocks.setBounds(0, 54, 982, 41);
+		lblStocks.setFont(new Font("Wide Latin", Font.BOLD, 14));
+		lblStocks.setBounds(0, 54, 982, 31);
 		frame.getContentPane().add(lblStocks);
 		
 	/*	Connection con =null;
@@ -223,31 +223,31 @@ public class Stock {
 		JLabel lblTotal_1 = new JLabel(Integer.toString(nbBtlBlanc));
 		lblTotal_1.setForeground(Color.WHITE);
 		lblTotal_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTotal_1.setBounds(176, 207, 46, 14);
+		lblTotal_1.setBounds(154, 205, 46, 14);
 		frame.getContentPane().add(lblTotal_1);
 
 		JLabel label_1 = new JLabel(Integer.toString(nbBtlRouge));
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_1.setBounds(176, 240, 46, 14);
+		label_1.setBounds(154, 238, 46, 14);
 		frame.getContentPane().add(label_1);
 
 		JLabel label_2 = new JLabel(Integer.toString(nbBtlRose));
 		label_2.setForeground(Color.WHITE);
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_2.setBounds(176, 273, 46, 14);
+		label_2.setBounds(154, 271, 46, 14);
 		frame.getContentPane().add(label_2);
 
 		JLabel label_3 = new JLabel(Integer.toString(nbBtlEffer));
 		label_3.setForeground(Color.WHITE);
 		label_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_3.setBounds(176, 306, 46, 14);
+		label_3.setBounds(154, 304, 46, 14);
 		frame.getContentPane().add(label_3);
 
 		JLabel label_4 = new JLabel(Integer.toString(totalBtl));
 		label_4.setForeground(Color.WHITE);
 		label_4.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_4.setBounds(176, 339, 46, 14);
+		label_4.setBounds(154, 337, 46, 14);
 		frame.getContentPane().add(label_4);
 
 		JComboBox comboBox = new JComboBox(listeTypeVin);

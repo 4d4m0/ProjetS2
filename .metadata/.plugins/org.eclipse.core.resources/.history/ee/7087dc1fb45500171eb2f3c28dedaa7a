@@ -83,32 +83,32 @@ public class Stock {
 
 		JLabel lblNewLabel = new JLabel("Rechercher");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(284, 140, 104, 22);
+		lblNewLabel.setBounds(316, 145, 104, 22);
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblParTypeDe = new JLabel("Par type de vin");
-		lblParTypeDe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblParTypeDe.setBounds(284, 199, 136, 22);
+		lblParTypeDe.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblParTypeDe.setBounds(316, 199, 104, 22);
 		frame.getContentPane().add(lblParTypeDe);
 
 		JLabel lblParFournisseur = new JLabel("Par Fournisseur");
-		lblParFournisseur.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblParFournisseur.setBounds(284, 232, 136, 22);
+		lblParFournisseur.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblParFournisseur.setBounds(316, 232, 104, 22);
 		frame.getContentPane().add(lblParFournisseur);
 
 		JLabel lblParCuve = new JLabel("Par cuv\u00E9e");
-		lblParCuve.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblParCuve.setBounds(284, 265, 136, 22);
+		lblParCuve.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblParCuve.setBounds(316, 265, 104, 22);
 		frame.getContentPane().add(lblParCuve);
 
 		JLabel lblParRgion = new JLabel("Par R\u00E9gion");
-		lblParRgion.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblParRgion.setBounds(284, 298, 136, 22);
+		lblParRgion.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblParRgion.setBounds(316, 298, 104, 22);
 		frame.getContentPane().add(lblParRgion);
 
 		JLabel lblPar = new JLabel("Par Volume\r\n");
-		lblPar.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPar.setBounds(284, 331, 136, 22);
+		lblPar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblPar.setBounds(316, 331, 104, 22);
 		frame.getContentPane().add(lblPar);
 
 		JLabel lblListeDesBouteilles = new JLabel("Liste des Bouteilles");
@@ -118,31 +118,31 @@ public class Stock {
 
 		JLabel lblVinBlanc = new JLabel("Vin Blanc :");
 		lblVinBlanc.setForeground(Color.WHITE);
-		lblVinBlanc.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblVinBlanc.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinBlanc.setBounds(10, 205, 97, 14);
 		frame.getContentPane().add(lblVinBlanc);
 
 		JLabel lblVinRouge = new JLabel("Vin Rouge :");
 		lblVinRouge.setForeground(Color.WHITE);
-		lblVinRouge.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblVinRouge.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinRouge.setBounds(10, 238, 97, 22);
 		frame.getContentPane().add(lblVinRouge);
 
 		JLabel lblVinRos = new JLabel("Vin Ros\u00E9 :");
 		lblVinRos.setForeground(Color.WHITE);
-		lblVinRos.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblVinRos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblVinRos.setBounds(10, 271, 97, 14);
 		frame.getContentPane().add(lblVinRos);
 
 		JLabel lblVinE = new JLabel("Vin Effervescent :");
 		lblVinE.setForeground(Color.WHITE);
-		lblVinE.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblVinE.setBounds(10, 304, 154, 14);
+		lblVinE.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblVinE.setBounds(10, 304, 122, 14);
 		frame.getContentPane().add(lblVinE);
 
 		JLabel lblTotal = new JLabel("Total :");
 		lblTotal.setForeground(Color.WHITE);
-		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblTotal.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblTotal.setBounds(10, 337, 86, 14);
 		frame.getContentPane().add(lblTotal);
 
@@ -209,8 +209,8 @@ public class Stock {
 		JLabel lblStocks = new JLabel("Stocks");
 		lblStocks.setForeground(new Color(0, 0, 51));
 		lblStocks.setHorizontalAlignment(SwingConstants.CENTER);
-		lblStocks.setFont(new Font("Wide Latin", Font.BOLD, 15));
-		lblStocks.setBounds(0, 54, 982, 41);
+		lblStocks.setFont(new Font("Wide Latin", Font.BOLD, 14));
+		lblStocks.setBounds(0, 54, 982, 31);
 		frame.getContentPane().add(lblStocks);
 		
 	/*	Connection con =null;
@@ -222,32 +222,32 @@ public class Stock {
 		}*/
 		JLabel lblTotal_1 = new JLabel(Integer.toString(nbBtlBlanc));
 		lblTotal_1.setForeground(Color.WHITE);
-		lblTotal_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTotal_1.setBounds(176, 207, 46, 14);
+		lblTotal_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblTotal_1.setBounds(154, 205, 46, 14);
 		frame.getContentPane().add(lblTotal_1);
 
 		JLabel label_1 = new JLabel(Integer.toString(nbBtlRouge));
 		label_1.setForeground(Color.WHITE);
-		label_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_1.setBounds(176, 240, 46, 14);
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label_1.setBounds(154, 238, 46, 14);
 		frame.getContentPane().add(label_1);
 
 		JLabel label_2 = new JLabel(Integer.toString(nbBtlRose));
 		label_2.setForeground(Color.WHITE);
-		label_2.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_2.setBounds(176, 273, 46, 14);
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label_2.setBounds(154, 271, 46, 14);
 		frame.getContentPane().add(label_2);
 
 		JLabel label_3 = new JLabel(Integer.toString(nbBtlEffer));
 		label_3.setForeground(Color.WHITE);
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_3.setBounds(176, 306, 46, 14);
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label_3.setBounds(154, 304, 46, 14);
 		frame.getContentPane().add(label_3);
 
 		JLabel label_4 = new JLabel(Integer.toString(totalBtl));
 		label_4.setForeground(Color.WHITE);
-		label_4.setFont(new Font("Tahoma", Font.BOLD, 16));
-		label_4.setBounds(176, 339, 46, 14);
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label_4.setBounds(154, 337, 46, 14);
 		frame.getContentPane().add(label_4);
 
 		JComboBox comboBox = new JComboBox(listeTypeVin);
