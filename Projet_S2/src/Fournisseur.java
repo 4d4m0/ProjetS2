@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -18,12 +20,10 @@ public class Fournisseur {
 
 	static JFrame frame;
 	private JTable table;
-	private String nom;
-	private String adresse;
-	private String CP;
-	private String ville;
-	private String telephone;
 	private String[] ListeFournisseur ={"Cuvelier Fauvarque","Cuvelier 2","Cuvelier 3"};
+	protected ArrayList<CreerFournisseur> ListeFournisseurs = new ArrayList<CreerFournisseur>();
+	CreerFournisseur fournisseur1 =new CreerFournisseur("cuvelier Fauvarque", "20 rue du vin", "59000", "Maubeuge", "01.02.03.04.05");
+	CreerFournisseur fournisseur2 =new CreerFournisseur("cuvelier du monde", "32 rue du vin", "59000", "Maubeuge", "06.07.08.09.10");
 
 	/**
 	 * Launch the application.
@@ -47,6 +47,8 @@ public class Fournisseur {
 	 */
 	public Fournisseur() {
 		initialize();
+		ListeFournisseurs.add(fournisseur1);
+
 	}
 
 	/**
@@ -124,31 +126,31 @@ public class Fournisseur {
 		frame.getContentPane().add(lblTlphone);
 		
 		JLabel lblTexte = new JLabel();
-		lblTexte.setText((String) comboBox.getSelectedItem().toString());
+		lblTexte.setText("");
 		lblTexte.setForeground(Color.WHITE);
 		lblTexte.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblTexte.setBounds(677, 193, 179, 14);
 		frame.getContentPane().add(lblTexte);
 		
-		JLabel label_1 = new JLabel("TEXTE ...");
+		JLabel label_1 = new JLabel("");
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		label_1.setBounds(677, 220, 179, 14);
 		frame.getContentPane().add(label_1);
 		
-		JLabel label_2 = new JLabel("TEXTE ...");
+		JLabel label_2 = new JLabel("");
 		label_2.setForeground(Color.WHITE);
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		label_2.setBounds(677, 247, 179, 14);
 		frame.getContentPane().add(label_2);
 		
-		JLabel label_3 = new JLabel("TEXTE ...");
+		JLabel label_3 = new JLabel("");
 		label_3.setForeground(Color.WHITE);
 		label_3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		label_3.setBounds(677, 272, 179, 14);
 		frame.getContentPane().add(label_3);
 		
-		JLabel label_4 = new JLabel("TEXTE ...");
+		JLabel label_4 = new JLabel("");
 		label_4.setForeground(Color.WHITE);
 		label_4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		label_4.setBounds(677, 299, 179, 14);
@@ -165,6 +167,20 @@ public class Fournisseur {
 		label_5.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
 		label_5.setBounds(0, 0, 982, 553);
 		frame.getContentPane().add(label_5);
-	}
+		
+		JButton btnVoirLeFournisseur = new JButton("voir le fournisseur");
+		btnVoirLeFournisseur.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				label_1.setText((String) comboBox.getSelectedItem());
 
+			}
+		});
+		btnVoirLeFournisseur.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnVoirLeFournisseur.setBounds(51, 247, 89, 23);
+		frame.getContentPane().add(btnVoirLeFournisseur);
+	}
 }

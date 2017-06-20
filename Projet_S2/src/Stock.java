@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -189,7 +191,14 @@ public class Stock {
 		lblStocks.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblStocks.setBounds(425, 54, 77, 31);
 		frame.getContentPane().add(lblStocks);
-
+		
+		Connection con =null;
+		try {
+			con =Connect.connect();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		JLabel lblTotal_1 = new JLabel(Integer.toString(nbBtlBlanc));
 		lblTotal_1.setBounds(154, 205, 46, 14);
 		frame.getContentPane().add(lblTotal_1);
