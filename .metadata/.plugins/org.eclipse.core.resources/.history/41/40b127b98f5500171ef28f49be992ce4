@@ -202,10 +202,10 @@ public class Add_Bttl {
 		lblNotesParticulires.setBounds(291, 284, 166, 14);
 		frame.getContentPane().add(lblNotesParticulires);
 		
-		JLabel lblRobe = new JLabel("Robe :");
+		JLabel lblRobe = new JLabel("robe :");
 		lblRobe.setForeground(Color.WHITE);
-		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblRobe.setBounds(291, 316, 136, 18);
+		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblRobe.setBounds(291, 319, 46, 14);
 		frame.getContentPane().add(lblRobe);
 
 		JComboBox comboBox = new JComboBox();

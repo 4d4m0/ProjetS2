@@ -201,12 +201,6 @@ public class Add_Bttl {
 		lblNotesParticulires.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNotesParticulires.setBounds(291, 284, 166, 14);
 		frame.getContentPane().add(lblNotesParticulires);
-		
-		JLabel lblRobe = new JLabel("Robe :");
-		lblRobe.setForeground(Color.WHITE);
-		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblRobe.setBounds(291, 316, 136, 18);
-		frame.getContentPane().add(lblRobe);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setForeground(Color.LIGHT_GRAY);
@@ -324,8 +318,14 @@ public class Add_Bttl {
 
 		JLabel lblFont = new JLabel("font");
 		lblFont.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
-		lblFont.setBounds(0, 0, 982, 553);
+		lblFont.setBounds(0, 0, 978, 544);
 		frame.getContentPane().add(lblFont);
+		
+		JLabel lblRobe = new JLabel("robe :");
+		lblRobe.setForeground(Color.WHITE);
+		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblRobe.setBounds(291, 319, 46, 14);
+		frame.getContentPane().add(lblRobe);
 		
 		t_robe = new JTextField();
 		t_robe.setBounds(460, 316, 95, 20);

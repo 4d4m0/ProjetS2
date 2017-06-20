@@ -205,7 +205,7 @@ public class Add_Bttl {
 		JLabel lblRobe = new JLabel("Robe :");
 		lblRobe.setForeground(Color.WHITE);
 		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblRobe.setBounds(291, 316, 136, 18);
+		lblRobe.setBounds(291, 319, 136, 18);
 		frame.getContentPane().add(lblRobe);
 
 		JComboBox comboBox = new JComboBox();
