@@ -1,10 +1,8 @@
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JButton;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
@@ -12,11 +10,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Add_Bttl {
@@ -64,13 +64,13 @@ public class Add_Bttl {
 	 */
 	public Add_Bttl() {
 		initialize();
-		try {
-			
-			insertBttl(con, b);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			
+//			insertBttl(con, b);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public Bouteille ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime,
@@ -258,15 +258,15 @@ public class Add_Bttl {
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-
+			JOptionPane jop1 = new JOptionPane();
+			jop1.showMessageDialog(null, "La bouteille est ajoutée", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
 			}
 
 
 		});
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				jop1 = new JOptionPane();
-				jop1.showMessageDialog(null, "La bouteille est ajoutée", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
+
 			}
 		});
 		btnValider.setBounds(178, 430, 95, 23);

@@ -142,7 +142,7 @@ public class Emplacement {
 		JLabel lblNewLabel1 = new JLabel("");
 		lblNewLabel1.setIcon(new ImageIcon("cave-a-vin.jpg"));
 		lblNewLabel1.setBounds(12, 128, 331, 235);
-		frame.getContentPane().add(lblNewLabel1);²
+		frame.getContentPane().add(lblNewLabel1);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon("verre_vin_qualit\u00E9.jpg"));
