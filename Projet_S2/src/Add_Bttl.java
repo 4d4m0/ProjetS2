@@ -19,7 +19,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
-public class Add_Bttl  {
+public class Add_Bttl {
 
 	static JFrame frame;
 	private JTextField t_nom;
@@ -64,6 +64,13 @@ public class Add_Bttl  {
 	 */
 	public Add_Bttl() {
 		initialize();
+		try {
+			
+			insertBttl(con, b);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Bouteille ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime,
@@ -251,20 +258,10 @@ public class Add_Bttl  {
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				//try {
-					;
-					stock.add(ajouter_Bttl(t_nom, t_region, t_pays, t_millesime,   // CETTE FONCTION MARCHE NICKEL --> AJOUT SANS PROBLEME DANS STOCK
-							t_cuvee, t_robe, t_tempe, t_fournisseur, t_degre,
-							t_volume, t_efferve, t_note, t_qtt, t_dispo,
-							t_emplacement, t_comment));
-					System.out.println(stock);
-					//insertBttl(con, b);
-				//} catch (SQLException e) {
-					// TODO Auto-generated catch block
-				//	e.printStackTrace();
-				//}
-				;
+
 			}
+
+
 		});
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -368,13 +365,22 @@ public class Add_Bttl  {
 		t_robe.setColumns(10);
 	}
 
-/*	public void insertBttl(Connection con, Bouteille B) throws SQLException {
+	public void insertBttl(Connection con, Bouteille B) throws SQLException {
 		try (Statement stmt = con.createStatement()) {
-			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
-					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
-					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
-					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
+			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + B.nom + ",'" + B.region + "'," + B.pays
+					+ "'," + B.millesime + "'," + B.cuvee + "'," + B.robe + "'," + B.temperature + "',"
+					+ B.fournisseur + "'," + B.degre + "'," + B.volume + "'," + B.effervescent + "',"
+					+ B.note + "'," + B.quantite + "'," + B.emplacement + "'," + B.commentaire + "',"+B.disponible+")");
 		}
-	}*/
+	}
+
+//	public void insertBttl(Connection con, Bouteille B) throws SQLException {
+//		try (Statement stmt = con.createStatement()) {
+//			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
+//					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
+//					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
+//					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
+//		}
+//	}
 
 }

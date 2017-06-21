@@ -49,14 +49,14 @@ public class Bouteille {
 		this.emplacement = emplacement;
 		this.commentaire = commentaire;
 	}
-	public void insertBttl(Connection con, Bouteille B) throws SQLException {
-		try (Statement stmt = con.createStatement()) {
-			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
-					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
-					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
-					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
-		}
-	}
+//	public void insertBttl(Connection con, Bouteille B) throws SQLException {
+//		try (Statement stmt = con.createStatement()) {
+//			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + this.nom + ",'" + this.region + "'," + this.pays
+//					+ "'," + this.millesime + "'," + this.cuvee + "'," + this.robe + "'," + this.temperature + "',"
+//					+ this.fournisseur + "'," + this.degre + "'," + this.volume + "'," + this.effervescent + "',"
+//					+ this.note + "'," + this.quantite + "'," + this.emplacement + "'," + this.commentaire + ")");
+//		}
+//	}
 	public String getNom() {
 		return nom;
 	}
