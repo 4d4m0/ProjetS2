@@ -19,6 +19,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import org.postgresql.ds.PGSimpleDataSource;
+
 public class Add_Bttl {
 
 	static JFrame frame;
@@ -64,13 +66,18 @@ public class Add_Bttl {
 	 */
 	public Add_Bttl() {
 		initialize();
-//		try {
-//			
-//			insertBttl(con, b);
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		PGSimpleDataSource ds = new PGSimpleDataSource();
+		ds.setServerName("localhost");
+		ds.setDatabaseName("Projet_S2");
+		try (Connection con = ds.getConnection("postgres", "admin")) {
+
+			System.out.println("Connexion ok");
+			
+			insertBttl(con, b);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Bouteille ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime,
@@ -369,8 +376,8 @@ public class Add_Bttl {
 
 	public void insertBttl(Connection con, Bouteille B) throws SQLException {
 		try (Statement stmt = con.createStatement()) {
-			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + B.nom + ",'" + B.region + "'," + B.pays
-					+ "'," + B.millesime + "'," + B.cuvee + "'," + B.robe + "'," + B.temperature + "',"
+			stmt.executeUpdate("INSERT INTO bouteille VALUES ('" + B.nom + "','" + B.region + "','" + B.pays
+					+ "','" + B.millesime + "','" + B.cuvee + "','" + B.robe + "','" + B.temperature + "',"
 					+ B.fournisseur + "'," + B.degre + "'," + B.volume + "'," + B.effervescent + "',"
 					+ B.note + "'," + B.quantite + "'," + B.emplacement + "'," + B.commentaire + "',"+B.disponible+")");
 		}
