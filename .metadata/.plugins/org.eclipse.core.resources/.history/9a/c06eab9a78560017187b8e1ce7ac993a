@@ -156,67 +156,67 @@ public class Add_Bttl  {
 		JLabel lblTemprature = new JLabel("Temp\u00E9rature :");
 		lblTemprature.setForeground(Color.WHITE);
 		lblTemprature.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTemprature.setBounds(25, 316, 123, 23);
+		lblTemprature.setBounds(25, 280, 123, 23);
 		frame.getContentPane().add(lblTemprature);
 
 		JLabel lblFournisseur = new JLabel("Fournisseur :");
 		lblFournisseur.setForeground(Color.WHITE);
 		lblFournisseur.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblFournisseur.setBounds(25, 350, 123, 23);
+		lblFournisseur.setBounds(25, 314, 123, 23);
 		frame.getContentPane().add(lblFournisseur);
 
 		JLabel lblDegrDalcool = new JLabel("Degr\u00E9 d'alcool :");
 		lblDegrDalcool.setForeground(Color.WHITE);
 		lblDegrDalcool.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblDegrDalcool.setBounds(25, 384, 136, 23);
+		lblDegrDalcool.setBounds(25, 348, 136, 23);
 		frame.getContentPane().add(lblDegrDalcool);
 
 		JLabel lblVolumeBouteille = new JLabel("Volume bouteille :");
 		lblVolumeBouteille.setForeground(Color.WHITE);
 		lblVolumeBouteille.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblVolumeBouteille.setBounds(291, 124, 149, 23);
+		lblVolumeBouteille.setBounds(25, 382, 149, 23);
 		frame.getContentPane().add(lblVolumeBouteille);
 
 		JLabel lblEffervescent = new JLabel("Effervescent :");
 		lblEffervescent.setForeground(Color.WHITE);
 		lblEffervescent.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblEffervescent.setBounds(291, 157, 136, 14);
+		lblEffervescent.setBounds(291, 128, 136, 14);
 		frame.getContentPane().add(lblEffervescent);
 
 		JLabel lblNote = new JLabel("Note :");
 		lblNote.setForeground(Color.WHITE);
 		lblNote.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNote.setBounds(291, 186, 136, 14);
+		lblNote.setBounds(291, 157, 136, 14);
 		frame.getContentPane().add(lblNote);
 
 		JLabel lblQuantit = new JLabel("Quantit\u00E9 :");
 		lblQuantit.setForeground(Color.WHITE);
 		lblQuantit.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblQuantit.setBounds(291, 219, 136, 17);
+		lblQuantit.setBounds(291, 190, 136, 17);
 		frame.getContentPane().add(lblQuantit);
 
 		JLabel lblDisponible = new JLabel("Disponible :");
 		lblDisponible.setForeground(Color.WHITE);
 		lblDisponible.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblDisponible.setBounds(291, 253, 136, 17);
+		lblDisponible.setBounds(291, 224, 136, 17);
 		frame.getContentPane().add(lblDisponible);
 
 		JLabel lblEmplacement = new JLabel("Emplacement :");
 		lblEmplacement.setForeground(Color.WHITE);
 		lblEmplacement.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblEmplacement.setBounds(291, 280, 136, 23);
+		lblEmplacement.setBounds(291, 251, 136, 23);
 		frame.getContentPane().add(lblEmplacement);
 
 		JLabel lblNotesParticulires = new JLabel("Notes Particuli\u00E8res :");
 		lblNotesParticulires.setForeground(Color.WHITE);
 		lblNotesParticulires.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNotesParticulires.setBounds(291, 318, 166, 14);
+		lblNotesParticulires.setBounds(291, 284, 166, 14);
 		frame.getContentPane().add(lblNotesParticulires);
 
 		JLabel lblRobe = new JLabel("Robe :");
 		lblRobe.setForeground(Color.WHITE);
 		lblRobe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblRobe.setBounds(25, 282, 136, 18);
+		lblRobe.setBounds(291, 316, 136, 18);
 		frame.getContentPane().add(lblRobe);
 
 		JComboBox comboBox = new JComboBox();
@@ -268,8 +268,6 @@ public class Add_Bttl  {
 		});
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				jop1 = new JOptionPane();
-				jop1.showMessageDialog(null, "La bouteille est ajoutée", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		btnValider.setBounds(178, 430, 95, 23);
