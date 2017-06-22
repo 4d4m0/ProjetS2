@@ -2,7 +2,6 @@ drop table if exists Bouteille cascade;
 drop table if exists Emplacement cascade;
 drop table if exists Fournisseur cascade;
 
-
 create table Emplacement(
 	id int primary key,
 	nbBttl int,
@@ -46,10 +45,9 @@ TRUNCATE TABLE Bouteille;
 insert into Bouteille values
 	('Chateau Lecroc','Bordeau','France',null,2002,'rouge',12,'Cuvelier Fauvarque',10,75,false,4,4,true,1,'commentaire rien a dire'),
 	('Chateau Leduc','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,75,false,3,4,true,2,'Viande rouge'),
-	('Chateau Lassalle','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,1.5,true,3,4,true,1,'Viande rouge');
+	('Chateau Lassalle','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,150,true,3,4,true,1,'Viande rouge');
 
 -- Afficher une bouteille --> test OK <--
-
 /*select nom, robe from Bouteille
 	where cuvee = 2002;
 */
@@ -70,20 +68,30 @@ insert into Fournisseur values
 /*select * from Fournisseur 
 	where ville ='Bordeau';
 */
---Focntion Alerte placeMax
-CREATE FUNCTION alerte_placeMax() RETURNS trigger AS $$
+
+--DELETE all pour fonction et trigger alerte_PlaceMax
+DROP FUNCTION alerte_placeMax() CASCADE;
+
+--Fonction Alerte placeMax
+
+/*CREATE FUNCTION alerte_placeMax() RETURNS trigger AS $$
 BEGIN
-UPDATE Emplacement SET nbBtll= nbBtll+Bouteille.quantite
-	Where type='INSERT';
-IF  nbBttl>nbBttlMax  THEN
-	RAISE NOTICE 'Il n y a plus de place dans cet emplacement veuillez consommer la bouteille immediatement';
-	RETURN NEW;
+UPDATE Emplacement SET nbBttl = nbBttl + NEW.quantite
+	Where type = 'insert';
+	IF  nbBttl>nbBttlMax  THEN
+		RAISE NOTICE 'Il n y a plus de place dans cet emplacement veuillez consommer la bouteille immediatement';
 	END IF;
+		RETURN NEW;
 END;
 $$LANGUAGE plpgsql;
 
 CREATE TRIGGER trigger_placeMax AFTER INSERT ON Bouteille
 	FOR EACH ROW EXECUTE PROCEDURE alerte_placeMax();
+*/
+
+
+--DELETE all pour function et trigger alerte Bttl
+DROP FUNCTION alerte_Bttl() CASCADE;
 
 --Fonction alerte Bouteille
 CREATE FUNCTION alerte_Bttl() RETURNS trigger AS $$
@@ -95,18 +103,11 @@ BEGIN
 	END IF;
 	RETURN NEW;
 END;
-
 $$LANGUAGE plpgsql;
 
--- trigger --> alerte nb_bouteille trop petit
 CREATE TRIGGER trigger_Bttl AFTER DELETE ON Bouteille
 	FOR EACH ROW EXECUTE PROCEDURE alerte_Bttl(); 
 
---DELETE all pour function et trigger alerte Bttl
-DROP FUNCTION alerte_Bttl() CASCADE;
-
---DELETE all pour fonction et trigger alerte_PlaceMax
-DROP FUNCTION alerte_placeMax() CASCADE;
 
 --DELETE une bouteille
 DELETE FROM bouteille
