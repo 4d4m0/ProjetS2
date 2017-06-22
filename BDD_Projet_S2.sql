@@ -40,9 +40,8 @@ emplacement int REFERENCES Emplacement(id),
 commentaire text
 );
 
-insert into Emplacement values
-	(1,24,2,10,5),
-	(2,24,2,12,5);
+--vider la table Bouteille
+TRUNCATE TABLE Bouteille;
 
 insert into Bouteille values
 	('Chateau Lecroc','Bordeau','France',null,2002,'rouge',12,'Cuvelier Fauvarque',10,75,false,4,4,true,1,'commentaire rien a dire'),
@@ -71,20 +70,21 @@ insert into Fournisseur values
 /*select * from Fournisseur 
 	where ville ='Bordeau';
 */
+--Focntion Alerte placeMax
 CREATE FUNCTION alerte_placeMax() RETURNS trigger AS $$
-DECLARE
-	nbBttl int = 0;
 BEGIN
 UPDATE Emplacement SET nbBtll= nbBtll+Bouteille.quantite
 	Where type='INSERT';
 IF  nbBttl>nbBttlMax  THEN
-	RAISE NOTICE 'Il n y a plus de place dans cet emplacement veuillez consommer la bouteille immediatement'
+	RAISE NOTICE 'Il n y a plus de place dans cet emplacement veuillez consommer la bouteille immediatement';
 	RETURN NEW;
+	END IF;
 END;
 $$LANGUAGE plpgsql;
 
 CREATE TRIGGER trigger_placeMax AFTER INSERT ON Bouteille
 	FOR EACH ROW EXECUTE PROCEDURE alerte_placeMax();
+
 --Fonction alerte Bouteille
 CREATE FUNCTION alerte_Bttl() RETURNS trigger AS $$
 DECLARE 
