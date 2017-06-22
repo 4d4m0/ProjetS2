@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -133,6 +135,18 @@ public class ModifierEmplacement {
 		frame.getContentPane().add(label);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane jop_ajout = new JOptionPane();
+				jop_ajout.showMessageDialog(null, "Emplacement modifié", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnValider.setBackground(new Color(51, 102, 0));
 		btnValider.setForeground(new Color(255, 255, 255));
 		btnValider.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
@@ -159,10 +173,22 @@ public class ModifierEmplacement {
 		frame.getContentPane().add(btnRetour);
 		
 		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane jop_suppr = new JOptionPane();
+				jop_suppr.showMessageDialog(null, "Emplacement supprimé", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnSupprimer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnSupprimer.setBackground(new Color(51, 102, 0));
 		btnSupprimer.setForeground(new Color(255, 255, 255));
 		btnSupprimer.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));
-		btnSupprimer.setBounds(494, 429, 115, 29);
+		btnSupprimer.setBounds(501, 428, 115, 29);
 		frame.getContentPane().add(btnSupprimer);
 		
 		JLabel label_1 = new JLabel("");

@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -133,6 +135,18 @@ public class CreerEmplacement {
 		frame.getContentPane().add(label);
 		
 		JButton btnValider = new JButton("Valider");
+		btnValider.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane jop_valider = new JOptionPane();
+				jop_valider.showMessageDialog(null, "Emplacement Ajouté", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnValider.setBackground(new Color(51, 102, 0));
 		btnValider.setForeground(new Color(255, 255, 255));
 		btnValider.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));

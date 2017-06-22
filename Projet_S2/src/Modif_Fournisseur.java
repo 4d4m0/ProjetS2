@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
@@ -97,6 +98,18 @@ public class Modif_Fournisseur {
 		frame.getContentPane().add(lblIdFournisseur);
 		
 		JButton btnModifierajouter = new JButton("Modifier/Ajouter");
+		btnModifierajouter.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane jop_modif = new JOptionPane();
+				jop_modif.showMessageDialog(null, "Changement effectué", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnModifierajouter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnModifierajouter.setBackground(new Color(51, 102, 0));
 		btnModifierajouter.setForeground(Color.WHITE);
 		btnModifierajouter.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -104,6 +117,18 @@ public class Modif_Fournisseur {
 		frame.getContentPane().add(btnModifierajouter);
 		
 		JButton btnSupprimer = new JButton("Supprimer");
+		btnSupprimer.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane jop_supprf = new JOptionPane();
+				jop_supprf.showMessageDialog(null, "Le fournisseur est supprimé", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnSupprimer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnSupprimer.setBackground(new Color(51, 102, 0));
 		btnSupprimer.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnSupprimer.setForeground(Color.WHITE);

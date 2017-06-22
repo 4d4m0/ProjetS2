@@ -6,18 +6,18 @@ public class Bouteille {
 	String nom;
 	String region;
 	String pays;
-	String millesime;
-	String cuvee;
+	int millesime;
+	int cuvee;
 	String robe;
-	String temperature;
+	double temperature;
 	String fournisseur;
-	String degre;
-	String volume;
-	String effervescent;
-	String note;
-	String quantite;
-	String disponible;
-	String emplacement;
+	double degre;
+	double volume;
+	boolean effervescent;
+	double note;
+	int quantite;
+	boolean disponible;
+	int emplacement;
 	String commentaire;
 
 	@Override
@@ -29,9 +29,11 @@ public class Bouteille {
 				+ ", commentaire=" + commentaire + "]";
 	}
 
-	public Bouteille(String nom, String region, String pays, String millesime, String cuvee, String robe,
-			String temperature, String fournisseur, String degre, String volume, String effervescent, String note,
-			String quantite, String disponible, String emplacement, String commentaire) {
+
+public Bouteille(String nom, String region, String pays, int millesime, int cuvee, String robe, double temperature,
+			String fournisseur, double degre, double volume, boolean effervescent, double note, int quantite,
+			boolean disponible, int emplacement, String commentaire) {
+		super();
 		this.nom = nom;
 		this.region = region;
 		this.pays = pays;
@@ -49,6 +51,168 @@ public class Bouteille {
 		this.emplacement = emplacement;
 		this.commentaire = commentaire;
 	}
+
+
+public String getNom() {
+	return nom;
+}
+
+
+public void setNom(String nom) {
+	this.nom = nom;
+}
+
+
+public String getRegion() {
+	return region;
+}
+
+
+public void setRegion(String region) {
+	this.region = region;
+}
+
+
+public String getPays() {
+	return pays;
+}
+
+
+public void setPays(String pays) {
+	this.pays = pays;
+}
+
+
+public int getMillesime() {
+	return millesime;
+}
+
+
+public void setMillesime(int millesime) {
+	this.millesime = millesime;
+}
+
+
+public int getCuvee() {
+	return cuvee;
+}
+
+
+public void setCuvee(int cuvee) {
+	this.cuvee = cuvee;
+}
+
+
+public String getRobe() {
+	return robe;
+}
+
+
+public void setRobe(String robe) {
+	this.robe = robe;
+}
+
+
+public double getTemperature() {
+	return temperature;
+}
+
+
+public void setTemperature(double temperature) {
+	this.temperature = temperature;
+}
+
+
+public String getFournisseur() {
+	return fournisseur;
+}
+
+
+public void setFournisseur(String fournisseur) {
+	this.fournisseur = fournisseur;
+}
+
+
+public double getDegre() {
+	return degre;
+}
+
+
+public void setDegre(double degre) {
+	this.degre = degre;
+}
+
+
+public double getVolume() {
+	return volume;
+}
+
+
+public void setVolume(double volume) {
+	this.volume = volume;
+}
+
+
+public boolean isEffervescent() {
+	return effervescent;
+}
+
+
+public void setEffervescent(boolean effervescent) {
+	this.effervescent = effervescent;
+}
+
+
+public double getNote() {
+	return note;
+}
+
+
+public void setNote(double note) {
+	this.note = note;
+}
+
+
+public int getQuantite() {
+	return quantite;
+}
+
+
+public void setQuantite(int quantite) {
+	this.quantite = quantite;
+}
+
+
+public boolean isDisponible() {
+	return disponible;
+}
+
+
+public void setDisponible(boolean disponible) {
+	this.disponible = disponible;
+}
+
+
+public int getEmplacement() {
+	return emplacement;
+}
+
+
+public void setEmplacement(int emplacement) {
+	this.emplacement = emplacement;
+}
+
+
+public String getCommentaire() {
+	return commentaire;
+}
+
+
+public void setCommentaire(String commentaire) {
+	this.commentaire = commentaire;
+}
+
+
 //	public void insertBttl(Connection con, Bouteille B) throws SQLException {
 //		try (Statement stmt = con.createStatement()) {
 //			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + this.nom + ",'" + this.region + "'," + this.pays
@@ -57,132 +221,7 @@ public class Bouteille {
 //					+ this.note + "'," + this.quantite + "'," + this.emplacement + "'," + this.commentaire + ")");
 //		}
 //	}
-	public String getNom() {
-		return nom;
-	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 
-	public String getRegion() {
-		return region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	public String getPays() {
-		return pays;
-	}
-
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
-
-	public String getMillesime() {
-		return millesime;
-	}
-
-	public void setMillesime(String millesime) {
-		this.millesime = millesime;
-	}
-
-	public String getCuvee() {
-		return cuvee;
-	}
-
-	public void setCuvee(String cuvee) {
-		this.cuvee = cuvee;
-	}
-
-	public String getRobe() {
-		return robe;
-	}
-
-	public void setRobe(String robe) {
-		this.robe = robe;
-	}
-
-	public String getTemperature() {
-		return temperature;
-	}
-
-	public void setTemperature(String temperature) {
-		this.temperature = temperature;
-	}
-
-	public String getFournisseur() {
-		return fournisseur;
-	}
-
-	public void setFournisseur(String fournisseur) {
-		this.fournisseur = fournisseur;
-	}
-
-	public String getDegre() {
-		return degre;
-	}
-
-	public void setDegre(String degre) {
-		this.degre = degre;
-	}
-
-	public String getVolume() {
-		return volume;
-	}
-
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
-
-	public String getEffervescent() {
-		return effervescent;
-	}
-
-	public void setEffervescent(String effervescent) {
-		this.effervescent = effervescent;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
-
-	public String getQuantite() {
-		return quantite;
-	}
-
-	public void setQuantite(String quantite) {
-		this.quantite = quantite;
-	}
-
-	public String getDisponible() {
-		return disponible;
-	}
-
-	public void setDisponible(String disponible) {
-		this.disponible = disponible;
-	}
-
-	public String getEmplacement() {
-		return emplacement;
-	}
-
-	public void setEmplacement(String Emplacement) {
-		emplacement = Emplacement;
-	}
-
-	public String getCommentaire() {
-		return commentaire;
-	}
-
-	public void setCommentaire(String commentaire) {
-		this.commentaire = commentaire;
-	}
 
 }

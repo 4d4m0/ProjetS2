@@ -13,6 +13,7 @@ create table Emplacement(
 
 insert into Emplacement values
 	(1,0,24,2,10,5),
+	(2,0,54,8,8,5),
 	(2,0,24,2,12,5);
 
 -- Afficher Emplacement --> test OK <--
@@ -24,15 +25,15 @@ create table Bouteille (
 nom text primary key,
 region text ,
 pays text ,
-millesime text,	-- annee remarquable
-cuvee text, 	-- pcq date va donner un moi et un jour
+millesime int,	-- annee remarquable
+cuvee int, 	-- pcq date va donner un moi et un jour
 robe text,
-temperature text,
+temperature real,
 fournisseur text,
 degre real,
 volume real,
 effervescent boolean,
-note int,
+note real,
 quantite int,
 disponibilite boolean,
 emplacement int REFERENCES Emplacement(id),
@@ -45,7 +46,10 @@ TRUNCATE TABLE Bouteille;
 insert into Bouteille values
 	('Chateau Lecroc','Bordeau','France',null,2002,'rouge',12,'Cuvelier Fauvarque',10,75,false,4,4,true,1,'commentaire rien a dire'),
 	('Chateau Leduc','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,75,false,3,4,true,2,'Viande rouge'),
-	('Chateau Lassalle','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,150,true,3,4,true,1,'Viande rouge');
+	('Chateau Lassalle','Jura','France','2003',2003,'rouge', 13, 'Cuvelier Fauvarque',10,150,true,3,4,true,1,'Viande rouge'),
+	('Chateau Pipeau','Saint-Emilion','France',2012,2012,'rouge',10,'La maison du vin',13.5,75,false,4,12,true,3,'Viandes rouges grillées, Fromages, Desserts au chocolat'),
+	('Le vin de merde','Mèze','France',null,2017,'blanc',10,'Carrefour',12.5,75,false,1,6,true,1,'N achetez pas ce vin')
+	('Chateau Beau Soleil','Thenay','France',null,2012,'blanc',8,'La maison du vin',12.5,75,true,3,6,true,'commentaire indisponible')
 
 -- Afficher une bouteille --> test OK <--
 /*select nom, robe from Bouteille
@@ -55,14 +59,16 @@ insert into Bouteille values
 create table Fournisseur (
 	nom text primary key,
 	adresse text,
-	CP text,
+	CP char(5) check (cp ~'^\d{5}$'),
 	ville text,
 	tel text
 );
 
 insert into Fournisseur values
 	('Cuvelier Fauvarque','20 Rue des vignes','0123456','Bordeau','01.02.03.04.05'),
-	('Fournisseur 1', '21 rue des vignes','020604','Sains les marquion','01.03.05.07.09');
+	('Fournisseur 1', '21 rue des vignes','020604','Sains les marquion','01.03.05.07.09'),
+	('La maison du vin','45 avenue Colbert',58000,'Nevers','03.86.61.67.56'),
+	('Carrefour','Quartier de l Epinette',59600,'Maubeuge','03.27.69.35.79'),
 
 -- afficher fournisseur -->test OK <--
 /*select * from Fournisseur 

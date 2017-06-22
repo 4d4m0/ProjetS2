@@ -26,6 +26,7 @@ public class Stock {
 	int nbBtlRose = 50;
 	int nbBtlEffer = 100;
 	int totalBtl = nbBtlBlanc + nbBtlRouge + nbBtlRose;
+	String[] listeVin={"Vin1","Vin2","Vin3"};
 	String[] listeTypeVin = { "Rouge", "Blanc", "Rose" };
 	String[] listeFournisseur = { "Cuvelier Fauvarque", "F1", "F2" };
 	String[] listeCuvee = { "2000", "2001", "2002", "2003" };
@@ -168,6 +169,14 @@ public class Stock {
 		frame.getContentPane().add(btnRetour);
 
 		JButton btnVoirLaBouteille = new JButton("Voir la bouteille");
+		btnVoirLaBouteille.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				VuBouteille vue=new VuBouteille();
+				frame.setVisible(false);
+				VuBouteille.frame.setVisible(true);
+			}
+		});
 		btnVoirLaBouteille.setBackground(new Color(51, 102, 0));
 		btnVoirLaBouteille.setForeground(new Color(255, 255, 255));
 		btnVoirLaBouteille.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 20));

@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 
 import org.postgresql.ds.PGSimpleDataSource;
 
-public class Add_Bttl {
+public class Add_Bttl extends Stock{
 
 	static JFrame frame;
 	private JTextField t_nom;
@@ -41,8 +41,8 @@ public class Add_Bttl {
 	private JTextField t_comment;
 	private JTextField t_robe;
 	public ArrayList<Bouteille> stock = new ArrayList<Bouteille>();
-	public Bouteille b = new Bouteille("vin1", "bordeau", "france", "", null, null, null, null, null, null, null, null,
-			null, null, null, null);
+	public Bouteille b = new Bouteille("Vin", "Bourgogne", "France", 0, 2003, "Rouge", 10, "Cuvelier Fauvarque", 12.5,
+			75, false, 4, 12, true, 1, "RAS");
 	public Connection con;
 
 	/**
@@ -66,28 +66,37 @@ public class Add_Bttl {
 	 */
 	public Add_Bttl() {
 		initialize();
-		PGSimpleDataSource ds = new PGSimpleDataSource();
-		ds.setServerName("localhost");
-		ds.setDatabaseName("Projet_S2");
-		try (Connection con = ds.getConnection("postgres", "admin")) {
+//		PGSimpleDataSource ds = new PGSimpleDataSource();
+//		ds.setServerName("localhost");
+//		ds.setDatabaseName("Projet_S2");
+//		con = ds.getConnection("postgres", "admin");
+//		try{
+//
+//			
+//		insertBttl(con, b);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+}
 
-			System.out.println("Connexion ok");
-			
-			insertBttl(con, b);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public boolean convertir(String s) {
+		if (s.equals("true"))
+			return true;
+		else
+			return false;
 	}
 
 	public Bouteille ajouter_Bttl(JTextField nom, JTextField region, JTextField pays, JTextField millesime,
 			JTextField cuvee, JTextField robe, JTextField temp, JTextField fournisseur, JTextField degre,
 			JTextField volume, JTextField effer, JTextField note, JTextField qtt, JTextField dispo,
 			JTextField emplacement, JTextField comment) {
-		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(), millesime.getText(),
-				cuvee.getText(), robe.getText(), temp.getText(), fournisseur.getText(), degre.getText(),
-				volume.getText(), effer.getText(), note.getText(), qtt.getText(), dispo.getText(),
-				emplacement.getText(), comment.getText());
+		Bouteille n_Bttl = new Bouteille(nom.getText(), region.getText(), pays.getText(),
+				Integer.valueOf(millesime.getText()), Integer.valueOf(cuvee.getText()), robe.getText(),
+				Integer.valueOf(temp.getText()), fournisseur.getText(), Integer.valueOf(degre.getText()),
+				Integer.valueOf(volume.getText()), convertir(effer.getText()), Integer.valueOf(note.getText()),
+				Integer.valueOf(qtt.getText()), convertir(dispo.getText()), Integer.valueOf(emplacement.getText()),
+				comment.getText());
 		// stock.add(n_Bttl);
 		return n_Bttl;
 		// System.out.println(n_Bttl);
@@ -233,24 +242,28 @@ public class Add_Bttl {
 		lblRobe.setBounds(25, 282, 136, 18);
 		frame.getContentPane().add(lblRobe);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setForeground(Color.LIGHT_GRAY);
+		JComboBox comboBox = new JComboBox(listeVin);
+		comboBox.setBackground(Color.LIGHT_GRAY);
 		comboBox.setBounds(628, 127, 72, 20);
+		comboBox.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN,15));
 		frame.getContentPane().add(comboBox);
 
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setForeground(Color.LIGHT_GRAY);
+		JComboBox comboBox_1 = new JComboBox(listeTypeVin);
+		comboBox_1.setBackground(Color.LIGHT_GRAY);
 		comboBox_1.setBounds(710, 127, 72, 20);
+		comboBox_1.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN,15));
 		frame.getContentPane().add(comboBox_1);
 
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setForeground(Color.LIGHT_GRAY);
+		JComboBox comboBox_2 = new JComboBox(listeCuvee);
+		comboBox_2.setBackground(Color.LIGHT_GRAY);
 		comboBox_2.setBounds(792, 127, 72, 20);
+		comboBox_2.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN,15));
 		frame.getContentPane().add(comboBox_2);
 
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setForeground(Color.LIGHT_GRAY);
+		JComboBox comboBox_3 = new JComboBox(listeRegion);
+		comboBox_3.setBackground(Color.LIGHT_GRAY);
 		comboBox_3.setBounds(874, 127, 72, 20);
+		comboBox_3.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN,15));
 		frame.getContentPane().add(comboBox_3);
 
 		t_nom = new JTextField();
@@ -265,10 +278,10 @@ public class Add_Bttl {
 		btnValider.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-			JOptionPane jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "La bouteille est ajoutée", "Confirmation", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane jop_ajout = new JOptionPane();
+				jop_ajout.showMessageDialog(null, "La bouteille est ajoutée", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
-
 
 		});
 		btnValider.addActionListener(new ActionListener() {
@@ -280,6 +293,14 @@ public class Add_Bttl {
 		frame.getContentPane().add(btnValider);
 
 		JButton btnSupprimerLaBouteille = new JButton("Supprimer la bouteille");
+		btnSupprimerLaBouteille.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				JOptionPane jop_suppr = new JOptionPane();
+				jop_suppr.showMessageDialog(null, "La bouteille est supprimée", "Confirmation",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
 		btnSupprimerLaBouteille.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -374,22 +395,48 @@ public class Add_Bttl {
 		t_robe.setColumns(10);
 	}
 
-	public void insertBttl(Connection con, Bouteille B) throws SQLException {
-		try (Statement stmt = con.createStatement()) {
-			stmt.executeUpdate("INSERT INTO bouteille VALUES ('" + B.nom + "','" + B.region + "','" + B.pays
-					+ "','" + B.millesime + "','" + B.cuvee + "','" + B.robe + "','" + B.temperature + "',"
-					+ B.fournisseur + "'," + B.degre + "'," + B.volume + "'," + B.effervescent + "',"
-					+ B.note + "'," + B.quantite + "'," + B.emplacement + "'," + B.commentaire + "',"+B.disponible+")");
-		}
-	}
+	
 
-//	public void insertBttl(Connection con, Bouteille B) throws SQLException {
-//		try (Statement stmt = con.createStatement()) {
-//			stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region + "'," + pays
-//					+ "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature + "',"
-//					+ fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
-//					+ note + "'," + quantite + "'," + emplacement + "'," + commentaire + ")");
+//	public void insertBttl(Connection con, Bouteille B) throws SQLException {	
+//		 String InsertBttl = "INSERT INTO Bouteille"
+//					+ "(nom,region,pays,millesime,cuvee,robe,temperature,fournisseur,degre,volume,effervescent,note,quantite,disponibilite,emplacement,commentaire)VALUES"
+//					+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"; // 16 elements a inserer
+//
+//		try  {
+//			PreparedStatement pstmt = con.prepareStatement(InsertBttl);
+//			pstmt.setString(1,B.nom);
+//			pstmt.setString(2,B.region);
+//			pstmt.setString(3,B.pays);
+//			pstmt.setInt(4,B.millesime);
+//			pstmt.setInt(5,B.cuvee);
+//			pstmt.setString(6,B.robe);
+//			pstmt.setDouble(7,B.temperature);
+//			pstmt.setString(8,B.fournisseur);
+//			pstmt.setDouble(9,B.degre);
+//			pstmt.setDouble(10,B.volume);
+//			pstmt.setBoolean(11,B.effervescent);
+//			pstmt.setDouble(12, B.note);
+//			pstmt.setInt(13, B.quantite);
+//			pstmt.setBoolean(14, B.disponible);
+//			pstmt.setInt(15, B.emplacement);
+//			pstmt.setString(16,B.commentaire);
+//			pstmt.executeUpdate();
+//			
 //		}
 //	}
+	}
 
-}
+
+	// public void insertBttl(Connection con, Bouteille B) throws SQLException {
+	// try (Statement stmt = con.createStatement()) {
+	// stmt.executeUpdate("INSERT INTO bouteille VALUES (" + nom + ",'" + region
+	// + "'," + pays
+	// + "'," + millesime + "'," + cuvee + "'," + robe + "'," + temperature +
+	// "',"
+	// + fournisseur + "'," + degre + "'," + volume + "'," + effervescent + "',"
+	// + note + "'," + quantite + "'," + emplacement + "'," + commentaire +
+	// ")");
+	// }
+	// }
+
+

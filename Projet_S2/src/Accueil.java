@@ -56,17 +56,12 @@ public class Accueil {
 	@SuppressWarnings("unused")
 	public Accueil() throws SQLException {
 		initialize();
-		PGSimpleDataSource ds = new PGSimpleDataSource();
-		ds.setServerName("localhost");
-		ds.setDatabaseName("Projet_S2");
-		try (Connection con = ds.getConnection("postgres", "admin")) {
 
-			System.out.println("Connexion ok");
-		}
 		Stock Stock = new Stock();
 		Commande Commande = new Commande();
 		Emplacement Emplacement = new Emplacement();
 		Fournisseur Fournisseur = new Fournisseur();
+		
 	}
 
 	/**
